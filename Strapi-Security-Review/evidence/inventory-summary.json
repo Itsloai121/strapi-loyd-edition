@@ -1,0 +1,13 @@
+{
+  "scanned_source_config_files": 6303,
+  "package_manifests": 65,
+  "literal_route_candidates": 268,
+  "candidate_hits": {
+    "shell_or_dynamic_code": 114,
+    "raw_queries": 118,
+    "urls_and_files": 157,
+    "browser_sinks": 16,
+    "secrets_candidates": 479,
+    "ports_and_binding": 82
+  }
+}

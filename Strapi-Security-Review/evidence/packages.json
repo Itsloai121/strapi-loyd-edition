@@ -1,0 +1,604 @@
+[
+  {
+    "path": "package.json",
+    "name": "strapi",
+    "version": null,
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {
+      "postinstall": "husky"
+    }
+  },
+  {
+    "path": "architecture/package.json",
+    "name": "strapi-architecture",
+    "version": null,
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "docs/package.json",
+    "name": "docs",
+    "version": "0.0.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "tests/app-template/package.json",
+    "name": "@strapi/e2e-test-app",
+    "version": "0.1.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "templates/website/package.json",
+    "name": "website",
+    "version": null,
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "scripts/front/package.json",
+    "name": "scripts-front",
+    "version": "5.57.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/admin-test-utils/package.json",
+    "name": "@strapi/admin-test-utils",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/utils/api-tests/package.json",
+    "name": "api-tests",
+    "version": "5.57.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/utils/eslint-config-custom/package.json",
+    "name": "eslint-config-custom",
+    "version": "5.57.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/utils/logger/package.json",
+    "name": "@strapi/logger",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/utils/oxlint-config/package.json",
+    "name": "oxlint-config",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/utils/tsconfig/package.json",
+    "name": "tsconfig",
+    "version": "5.57.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/utils/typescript/package.json",
+    "name": "@strapi/typescript-utils",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/utils/upgrade/package.json",
+    "name": "@strapi/upgrade",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/utils/vitest-config/package.json",
+    "name": "vitest-config",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/providers/email-amazon-ses/package.json",
+    "name": "@strapi/provider-email-amazon-ses",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/providers/email-mailgun/package.json",
+    "name": "@strapi/provider-email-mailgun",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/providers/email-nodemailer/package.json",
+    "name": "@strapi/provider-email-nodemailer",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/providers/email-sendgrid/package.json",
+    "name": "@strapi/provider-email-sendgrid",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/providers/email-sendmail/package.json",
+    "name": "@strapi/provider-email-sendmail",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/providers/upload-aws-s3/package.json",
+    "name": "@strapi/provider-upload-aws-s3",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/providers/upload-cloudinary/package.json",
+    "name": "@strapi/provider-upload-cloudinary",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/providers/upload-local/package.json",
+    "name": "@strapi/provider-upload-local",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/plugins/cloud/package.json",
+    "name": "@strapi/plugin-cloud",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/plugins/color-picker/package.json",
+    "name": "@strapi/plugin-color-picker",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/plugins/documentation/package.json",
+    "name": "@strapi/plugin-documentation",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/plugins/graphql/package.json",
+    "name": "@strapi/plugin-graphql",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/plugins/i18n/package.json",
+    "name": "@strapi/i18n",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/plugins/sentry/package.json",
+    "name": "@strapi/plugin-sentry",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/plugins/users-permissions/package.json",
+    "name": "@strapi/plugin-users-permissions",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/generators/generators/package.json",
+    "name": "@strapi/generators",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/admin/package.json",
+    "name": "@strapi/admin",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/content-manager/package.json",
+    "name": "@strapi/content-manager",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/content-releases/package.json",
+    "name": "@strapi/content-releases",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/content-type-builder/package.json",
+    "name": "@strapi/content-type-builder",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/core/package.json",
+    "name": "@strapi/core",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/data-transfer/package.json",
+    "name": "@strapi/data-transfer",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/database/package.json",
+    "name": "@strapi/database",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/email/package.json",
+    "name": "@strapi/email",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/openapi/package.json",
+    "name": "@strapi/openapi",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/permissions/package.json",
+    "name": "@strapi/permissions",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/review-workflows/package.json",
+    "name": "@strapi/review-workflows",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/strapi/package.json",
+    "name": "@strapi/strapi",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/types/package.json",
+    "name": "@strapi/types",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/upload/package.json",
+    "name": "@strapi/upload",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/core/utils/package.json",
+    "name": "@strapi/utils",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/cli/cloud/package.json",
+    "name": "@strapi/cloud-cli",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/cli/create-strapi/package.json",
+    "name": "create-strapi",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/cli/create-strapi-app/package.json",
+    "name": "create-strapi-app",
+    "version": "5.57.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/example/package.json",
+    "name": null,
+    "version": null,
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/example-js/package.json",
+    "name": null,
+    "version": null,
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/vanilla/package.json",
+    "name": null,
+    "version": null,
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/vanilla-js/package.json",
+    "name": null,
+    "version": null,
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "examples/complex/package.json",
+    "name": "complex",
+    "version": "0.0.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "examples/empty/package.json",
+    "name": "empty",
+    "version": "0.0.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "examples/getstarted/package.json",
+    "name": "getstarted",
+    "version": "0.0.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "examples/kitchensink/package.json",
+    "name": "kitchensink",
+    "version": "0.0.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "examples/kitchensink-ts/package.json",
+    "name": "kitchensink-ts",
+    "version": "0.0.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "examples/plugins/todo-example/package.json",
+    "name": "strapi-plugin-todo-example",
+    "version": "0.0.0",
+    "engines": {
+      "node": ">=20.0.0 <=26.x.x",
+      "npm": ">=6.0.0"
+    },
+    "install_scripts": {}
+  },
+  {
+    "path": "examples/plugins/workspace-plugin/package.json",
+    "name": "strapi-plugin-workspace-plugin",
+    "version": "0.0.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": "examples/getstarted/src/plugins/local-plugin/package.json",
+    "name": "strapi-plugin-local-plugin",
+    "version": "0.0.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": ".github/scripts/package.json",
+    "name": null,
+    "version": null,
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": ".github/actions/check-pr-status/package.json",
+    "name": "check-pr-status",
+    "version": "5.57.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": ".github/actions/community-pr-triage/package.json",
+    "name": "community-pr-triage",
+    "version": "5.43.0",
+    "engines": null,
+    "install_scripts": {}
+  },
+  {
+    "path": ".github/actions/draft-release/package.json",
+    "name": "draft-release",
+    "version": "5.52.3",
+    "engines": {
+      "node": ">=22.0.0 <=26.x.x"
+    },
+    "install_scripts": {}
+  }
+]

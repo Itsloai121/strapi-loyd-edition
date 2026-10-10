@@ -1,0 +1,406 @@
+{
+  "total_packages": 2838,
+  "queried_packages": 2838,
+  "matches": [
+    {
+      "name": "@apollo/server",
+      "version": "4.13.0",
+      "advisories": [
+        "GHSA-9q82-xgwf-vj6h"
+      ]
+    },
+    {
+      "name": "@fastify/busboy",
+      "version": "2.0.0",
+      "advisories": [
+        "GHSA-gxm5-99cw-xjw9",
+        "GHSA-x8mw-p69m-v3mx"
+      ]
+    },
+    {
+      "name": "@graphql-tools/utils",
+      "version": "10.1.3",
+      "advisories": [
+        "GHSA-7mx3-vvmw-hjmv"
+      ]
+    },
+    {
+      "name": "@graphql-tools/utils",
+      "version": "9.2.1",
+      "advisories": [
+        "GHSA-7mx3-vvmw-hjmv"
+      ]
+    },
+    {
+      "name": "@simple-git/argv-parser",
+      "version": "1.1.1",
+      "advisories": [
+        "GHSA-v5rq-49vh-5v5c"
+      ]
+    },
+    {
+      "name": "@vitest/mocker",
+      "version": "4.1.5",
+      "advisories": [
+        "GHSA-82fw-gwwq-j7x9"
+      ]
+    },
+    {
+      "name": "axios",
+      "version": "1.19.0",
+      "advisories": [
+        "GHSA-3pq3-5fj3-cg6v",
+        "GHSA-44g4-m2mj-wpvx",
+        "GHSA-4hqw-qxg8-jxx2",
+        "GHSA-542g-h47m-68v8",
+        "GHSA-9fr6-4gfg-395g",
+        "GHSA-c29m-xwm3-cm6r",
+        "GHSA-j8rh-479h-cp32",
+        "GHSA-m8m8-qj5v-23w3",
+        "GHSA-mghh-pgcx-3jjj",
+        "GHSA-r4gj-5m52-g5wh",
+        "GHSA-vh66-26gq-q6x8",
+        "GHSA-x97p-jq2g-jp4f"
+      ]
+    },
+    {
+      "name": "brace-expansion",
+      "version": "2.1.0",
+      "advisories": [
+        "GHSA-3jxr-9vmj-r5cp",
+        "GHSA-6j4f-fj2g-mc7p",
+        "GHSA-mh99-v99m-4gvg",
+        "GHSA-q2hr-2g5m-vwhr",
+        "GHSA-qhr7-859c-m2p7",
+        "GHSA-rgw5-rvv9-x895"
+      ]
+    },
+    {
+      "name": "brace-expansion",
+      "version": "5.0.5",
+      "advisories": [
+        "GHSA-3jxr-9vmj-r5cp",
+        "GHSA-6j4f-fj2g-mc7p",
+        "GHSA-jxxr-4gwj-5jf2",
+        "GHSA-mh99-v99m-4gvg",
+        "GHSA-q2hr-2g5m-vwhr",
+        "GHSA-qhr7-859c-m2p7",
+        "GHSA-rgw5-rvv9-x895"
+      ]
+    },
+    {
+      "name": "braces",
+      "version": "3.0.3",
+      "advisories": [
+        "GHSA-vfj7-8cjw-p6xm"
+      ]
+    },
+    {
+      "name": "browserslist",
+      "version": "4.28.1",
+      "advisories": [
+        "GHSA-73wf-gq98-2v4g",
+        "GHSA-c83g-rgw3-j3cx"
+      ]
+    },
+    {
+      "name": "cross-spawn",
+      "version": "6.0.5",
+      "advisories": [
+        "GHSA-3xgq-45jj-v275"
+      ]
+    },
+    {
+      "name": "dompurify",
+      "version": "3.4.13",
+      "advisories": [
+        "GHSA-6688-9rhm-gjv2",
+        "GHSA-p98j-92pf-mc4p"
+      ]
+    },
+    {
+      "name": "ejs",
+      "version": "3.1.9",
+      "advisories": [
+        "GHSA-ghr5-ch3p-vcr6"
+      ]
+    },
+    {
+      "name": "esbuild",
+      "version": "0.27.7",
+      "advisories": [
+        "GHSA-g7r4-m6w7-qqqr"
+      ]
+    },
+    {
+      "name": "fflate",
+      "version": "0.8.2",
+      "advisories": [
+        "GHSA-px8p-9vwx-vf98"
+      ]
+    },
+    {
+      "name": "file-type",
+      "version": "20.5.0",
+      "advisories": [
+        "GHSA-5v7r-6r5c-r473",
+        "GHSA-j47w-4g3g-c36v"
+      ]
+    },
+    {
+      "name": "handlebars",
+      "version": "4.7.9",
+      "advisories": [
+        "GHSA-8r5x-fm3f-whwj",
+        "GHSA-p8wg-vrv2-v86f",
+        "GHSA-xw65-4hp5-5hc7"
+      ]
+    },
+    {
+      "name": "html-minifier",
+      "version": "3.5.21",
+      "advisories": [
+        "GHSA-pfq8-rq6v-vf5m"
+      ]
+    },
+    {
+      "name": "http-cache-semantics",
+      "version": "4.1.1",
+      "advisories": [
+        "GHSA-ch52-4w7c-c8xp"
+      ]
+    },
+    {
+      "name": "ip-address",
+      "version": "10.4.0",
+      "advisories": [
+        "GHSA-2vr4-cq9g-pvrc",
+        "GHSA-h3mg-xc3c-68pw",
+        "GHSA-j6r3-76f7-8jcv",
+        "GHSA-rpw4-54j3-4h4q"
+      ]
+    },
+    {
+      "name": "js-yaml",
+      "version": "4.1.1",
+      "advisories": [
+        "GHSA-2883-xcg3-v3hh",
+        "GHSA-52cp-r559-cp3m",
+        "GHSA-5p4m-2wfm-xmqj",
+        "GHSA-h67p-54hq-rp68"
+      ]
+    },
+    {
+      "name": "lodash",
+      "version": "4.17.23",
+      "advisories": [
+        "GHSA-f23m-r3pf-42rh",
+        "GHSA-r5fr-rjxr-66jc"
+      ]
+    },
+    {
+      "name": "markdown-it",
+      "version": "14.3.0",
+      "advisories": [
+        "GHSA-253c-mchw-3w2r"
+      ]
+    },
+    {
+      "name": "minimatch",
+      "version": "9.0.3",
+      "advisories": [
+        "GHSA-23c5-xmqv-rm74",
+        "GHSA-3ppc-4f35-3m26",
+        "GHSA-7r86-cg39-jmmj"
+      ]
+    },
+    {
+      "name": "minimatch",
+      "version": "9.0.5",
+      "advisories": [
+        "GHSA-23c5-xmqv-rm74",
+        "GHSA-3ppc-4f35-3m26",
+        "GHSA-7r86-cg39-jmmj"
+      ]
+    },
+    {
+      "name": "minimatch",
+      "version": "5.1.0",
+      "advisories": [
+        "GHSA-23c5-xmqv-rm74",
+        "GHSA-3ppc-4f35-3m26",
+        "GHSA-7r86-cg39-jmmj"
+      ]
+    },
+    {
+      "name": "nodemailer",
+      "version": "9.0.1",
+      "advisories": [
+        "GHSA-2x7j-588g-ccc2",
+        "GHSA-6vj9-mwq6-2f5v",
+        "GHSA-8m3c-c648-2xjj",
+        "GHSA-8vvx-rff5-p5rq",
+        "GHSA-cc9r-2j5m-2m83",
+        "GHSA-v53p-9fqp-m79j",
+        "GHSA-wmmp-3585-3rmp"
+      ]
+    },
+    {
+      "name": "nx",
+      "version": "20.8.4",
+      "advisories": [
+        "GHSA-g2r8-wvmj-jf5w",
+        "GHSA-hrvq-x7jp-36xv",
+        "GHSA-vp3h-ghgh-jr7g",
+        "GHSA-w2vw-w76x-qr89",
+        "GHSA-w3vv-58gj-gw77"
+      ]
+    },
+    {
+      "name": "picomatch",
+      "version": "4.0.2",
+      "advisories": [
+        "GHSA-3v7f-55p6-f55p",
+        "GHSA-c2c7-rcm5-vvqj"
+      ]
+    },
+    {
+      "name": "piscina",
+      "version": "4.9.3",
+      "advisories": [
+        "GHSA-67c8-pqhq-4rmx"
+      ]
+    },
+    {
+      "name": "proxy-addr",
+      "version": "2.0.7",
+      "advisories": [
+        "GHSA-jqcg-44mw-7w3h"
+      ]
+    },
+    {
+      "name": "react-router",
+      "version": "6.30.6",
+      "advisories": [
+        "GHSA-337j-9hxr-rhxg",
+        "GHSA-wrjc-x8rr-h8h6"
+      ]
+    },
+    {
+      "name": "sharp",
+      "version": "0.35.4",
+      "advisories": [
+        "GHSA-wq5f-xc86-pv6w"
+      ]
+    },
+    {
+      "name": "shell-quote",
+      "version": "1.10.0",
+      "advisories": [
+        "GHSA-pqg4-j6r4-53mv"
+      ]
+    },
+    {
+      "name": "simple-git",
+      "version": "3.36.0",
+      "advisories": [
+        "GHSA-858h-whjf-mvg5",
+        "GHSA-g4wm-2vf7-vfgr",
+        "GHSA-x6jw-m9v5-85vh"
+      ]
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.1",
+      "advisories": [
+        "GHSA-68fv-2mgg-jv7q"
+      ]
+    },
+    {
+      "name": "sprintf-js",
+      "version": "1.0.3",
+      "advisories": [
+        "GHSA-hp3w-g68c-fv3c"
+      ]
+    },
+    {
+      "name": "stream-json",
+      "version": "1.9.1",
+      "advisories": [
+        "GHSA-528h-pc64-c93x",
+        "GHSA-hqr4-qq8f-hg3x",
+        "GHSA-mjw6-4jj6-33hc"
+      ]
+    },
+    {
+      "name": "tough-cookie",
+      "version": "4.0.0",
+      "advisories": [
+        "GHSA-72xf-g2v4-qvf3"
+      ]
+    },
+    {
+      "name": "undici",
+      "version": "5.29.0",
+      "advisories": [
+        "GHSA-2mjp-6q6p-2qxm",
+        "GHSA-35p6-xmwp-9g52",
+        "GHSA-4992-7rv2-5pvq",
+        "GHSA-8xcm-r25x-g524",
+        "GHSA-g8m3-5g58-fq7m",
+        "GHSA-g9mf-h72j-4rw9",
+        "GHSA-m8rv-5g2x-5cg5",
+        "GHSA-p88m-4jfj-68fv",
+        "GHSA-r53p-7pc4-xj5r",
+        "GHSA-v3r7-h72x-cjcm",
+        "GHSA-v9p9-hfj2-hcw8",
+        "GHSA-vrm6-8vpv-qv8q",
+        "GHSA-vxpw-j846-p89q"
+      ]
+    },
+    {
+      "name": "undici",
+      "version": "7.27.2",
+      "advisories": [
+        "GHSA-2gqq-gqf2-x968",
+        "GHSA-2jfj-6hjv-fm6j",
+        "GHSA-35p6-xmwp-9g52",
+        "GHSA-3xpg-4rpp-hhhm",
+        "GHSA-4cwx-7wf7-3272",
+        "GHSA-8436-99hf-9mmv",
+        "GHSA-8xcm-r25x-g524",
+        "GHSA-g8m3-5g58-fq7m",
+        "GHSA-hm92-r4w5-c3mj",
+        "GHSA-jr45-8vmc-qm54",
+        "GHSA-m8rv-5g2x-5cg5",
+        "GHSA-p88m-4jfj-68fv",
+        "GHSA-pmjh-fq2x-6v4x",
+        "GHSA-pr7r-676h-xcf6",
+        "GHSA-r53p-7pc4-xj5r",
+        "GHSA-rfgv-xxqx-mfg5",
+        "GHSA-rx4f-c7p8-82vq",
+        "GHSA-v3r7-h72x-cjcm",
+        "GHSA-vmh5-mc38-953g",
+        "GHSA-vxpw-j846-p89q",
+        "GHSA-w293-vg96-wgc3"
+      ]
+    },
+    {
+      "name": "vitest",
+      "version": "4.1.5",
+      "advisories": [
+        "GHSA-82fw-gwwq-j7x9"
+      ]
+    },
+    {
+      "name": "webpack-dev-middleware",
+      "version": "6.1.3",
+      "advisories": [
+        "GHSA-g84c-rxfj-3j2c"
+      ]
+    }
+  ],
+  "errors": [],
+  "source": "OSV querybatch; npm package/version only",
+  "checked_at": "2026-10-10"
+}

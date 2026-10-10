@@ -1,0 +1,5802 @@
+{
+  "warning": "Candidate locations, not confirmed vulnerabilities. Regex route inventory is partial; dynamic factory routes and deployed plugins require runtime enumeration. Secret values deliberately omitted.",
+  "files_scanned": 6303,
+  "candidates": [
+    {
+      "category": "ports_and_binding",
+      "path": "docker-compose.dev.yml",
+      "line": 13,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "docker-compose.dev.yml",
+      "line": 27,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "docker-compose.test.yml",
+      "line": 16,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "docker-compose.test.yml",
+      "line": 35,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "rollup.utils.mjs",
+      "line": 92,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "scripts/release.js",
+      "line": 2,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "scripts/release.js",
+      "line": 98,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "scripts/release.js",
+      "line": 101,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/e2e/constants.ts",
+      "line": 68,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/e2e/constants.ts",
+      "line": 71,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/e2e/constants.ts",
+      "line": 74,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/helpers/test-app.js",
+      "line": 82,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/scripts/generate-test-app.js",
+      "line": 16,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/scripts/run-api-tests.js",
+      "line": 22,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/scripts/run-api-tests.js",
+      "line": 33,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/scripts/run-api-tests.js",
+      "line": 64,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/dts-import.ts",
+      "line": 47,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/dts-import.ts",
+      "line": 119,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/dts-import.ts",
+      "line": 134,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/fs.js",
+      "line": 132,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/fs.js",
+      "line": 143,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/fs.js",
+      "line": 215,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/utils/get-db-state.js",
+      "line": 4,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/rate-limit.ts",
+      "line": 2,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/restart.ts",
+      "line": 101,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/cli-transfer-remote-e2e/http.js",
+      "line": 14,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/utils/cli-transfer-remote-e2e/index.js",
+      "line": 14,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/utils/cli-transfer-remote-e2e/index.js",
+      "line": 26,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/runners/shared-setup.js",
+      "line": 31,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/runners/shared-setup.js",
+      "line": 100,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/scripts/endpoints.ts",
+      "line": 2,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/utils/scripts/endpoints.ts",
+      "line": 9,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/migration/framework/resolve-strapi-version.ts",
+      "line": 1,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/migration/framework/resolve-strapi-version.ts",
+      "line": 22,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "tests/migration/framework/shared.ts",
+      "line": 148,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/migration/fixture/__tests__/resolve-strapi-version.test.ts",
+      "line": 1,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/migration/fixture/__tests__/resolve-strapi-version.test.ts",
+      "line": 10,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/e2e/tests/settings/users-permissions/role-matrix.spec.ts",
+      "line": 111,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/create-strapi-app/scaffold.test.cli.js",
+      "line": 15,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/data-transfer/export-import-roundtrip.test.cli.js",
+      "line": 35,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/data-transfer/export-import-roundtrip.test.cli.js",
+      "line": 60,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/data-transfer/export.test.cli.js",
+      "line": 5,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/data-transfer/import.test.cli.js",
+      "line": 5,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/data-transfer/import.test.cli.js",
+      "line": 28,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/data-transfer/import.test.cli.js",
+      "line": 49,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/cli/tests/strapi/data-transfer/pull-remote.test.cli.js",
+      "line": 69,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/data-transfer/pull-remote.test.cli.js",
+      "line": 88,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/cli/tests/strapi/data-transfer/push-remote.test.cli.js",
+      "line": 77,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/data-transfer/push-remote.test.cli.js",
+      "line": 96,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/cli/tests/strapi/strapi/active-user.test.cli.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/active-user.test.cli.js",
+      "line": 30,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/active-user.test.cli.js",
+      "line": 59,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/active-user.test.cli.js",
+      "line": 97,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/active-user.test.cli.js",
+      "line": 135,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/active-user.test.cli.js",
+      "line": 156,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/cli/tests/strapi/strapi/block-user.test.cli.js",
+      "line": 16,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/block-user.test.cli.js",
+      "line": 28,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/block-user.test.cli.js",
+      "line": 53,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/block-user.test.cli.js",
+      "line": 81,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/block-user.test.cli.js",
+      "line": 109,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/block-user.test.cli.js",
+      "line": 130,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/content-types-list.test.cli.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/controllers-list.test.cli.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/cli/tests/strapi/strapi/create-user.test.cli.js",
+      "line": 16,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/create-user.test.cli.js",
+      "line": 24,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/create-user.test.cli.js",
+      "line": 32,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/cli/tests/strapi/strapi/delete-user.test.cli.js",
+      "line": 16,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/delete-user.test.cli.js",
+      "line": 28,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/delete-user.test.cli.js",
+      "line": 52,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/delete-user.test.cli.js",
+      "line": 78,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/delete-user.test.cli.js",
+      "line": 99,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/delete-user.test.cli.js",
+      "line": 111,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/hooks-list.test.cli.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/cli/tests/strapi/strapi/list-users.test.cli.js",
+      "line": 13,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/list-users.test.cli.js",
+      "line": 25,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/list-users.test.cli.js",
+      "line": 50,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/middlewares-list.test.cli.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/openapi-generate.test.cli.ts",
+      "line": 77,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/cli/tests/strapi/strapi/openapi-generate.test.cli.ts",
+      "line": 84,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/openapi-generate.test.cli.ts",
+      "line": 114,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/policies-list.test.cli.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/cli/tests/strapi/strapi/rename-field.test.cli.ts",
+      "line": 12,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/rename-field.test.cli.ts",
+      "line": 37,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/cli/tests/strapi/strapi/rename-field.test.cli.ts",
+      "line": 64,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/routes-list.test.cli.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/services-list.test.cli.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/version.test.cli.js",
+      "line": 21,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/strapi/version.test.cli.js",
+      "line": 31,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/version/version.test.cli.js",
+      "line": 20,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "tests/cli/tests/strapi/version/version.test.cli.js",
+      "line": 30,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "tests/app-template/config/server.js",
+      "line": 2,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "tests/app-template/src/api/config/utils/is-loopback-address.test.js",
+      "line": 19,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/content-releases/releases-audit-logs.test.api.ts",
+      "line": 49,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "tests/api/plugins/graphql/cors.test.api.js",
+      "line": 96,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/i18n/locales-audit-logs.test.api.ts",
+      "line": 19,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/users-graphql.test.api.js",
+      "line": 15,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/users-graphql.test.api.js",
+      "line": 120,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/users-graphql.test.api.js",
+      "line": 176,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/users-graphql.test.api.js",
+      "line": 319,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/users-graphql.test.api.js",
+      "line": 458,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-cookie-security.test.api.js",
+      "line": 17,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-jwt-algorithm.test.api.js",
+      "line": 27,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-password-update-revokes-sessions.test.api.ts",
+      "line": 10,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-password-update-revokes-sessions.test.api.ts",
+      "line": 149,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-password-update-revokes-sessions.test.api.ts",
+      "line": 168,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 13,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 172,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 186,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 210,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 212,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 219,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 221,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 228,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 230,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js",
+      "line": 264,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-sessions.test.api.js",
+      "line": 14,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-sessions.test.api.js",
+      "line": 21,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "tests/api/plugins/users-permissions/content-api/auth-sessions.test.api.js",
+      "line": 30,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth.test.api.js",
+      "line": 16,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth.test.api.js",
+      "line": 20,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth.test.api.js",
+      "line": 61,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth.test.api.js",
+      "line": 77,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/auth.test.api.js",
+      "line": 79,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/email-confirmation.test.api.js",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/user-update-relations.test.api.js",
+      "line": 89,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/user-update-relations.test.api.js",
+      "line": 162,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/user-update-relations.test.api.js",
+      "line": 198,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/user-update-relations.test.api.js",
+      "line": 461,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/users-api.test.api.js",
+      "line": 68,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/users-api.test.api.js",
+      "line": 309,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/users-api.test.api.js",
+      "line": 312,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/plugins/users-permissions/content-api/users-api.test.api.js",
+      "line": 322,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-admin-token-crud.test.api.ts",
+      "line": 53,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-admin-token-crud.test.api.ts",
+      "line": 86,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-admin-token-crud.test.api.ts",
+      "line": 941,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-admin-token-crud.test.api.ts",
+      "line": 980,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-auth.test.api.js",
+      "line": 96,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-auth.test.api.js",
+      "line": 118,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-auth.test.api.js",
+      "line": 157,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-auth.test.api.js",
+      "line": 249,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-auth.test.api.js",
+      "line": 385,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-auth.test.api.js",
+      "line": 499,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-authenticated-user.test.api.js",
+      "line": 175,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-authenticated-user.test.api.js",
+      "line": 206,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-authenticated-user.test.api.js",
+      "line": 207,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-authenticated-user.test.api.js",
+      "line": 231,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-authenticated-user.test.api.js",
+      "line": 463,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-authenticated-user.test.api.js",
+      "line": 496,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-authenticated-user.test.api.js",
+      "line": 497,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-debug-dump.test.api.ts",
+      "line": 22,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-guided-tour-meta.test.api.ts",
+      "line": 50,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-legacy-migration.test.api.ts",
+      "line": 54,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-password-change-revokes-sessions.test.api.ts",
+      "line": 38,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-password-change-revokes-sessions.test.api.ts",
+      "line": 39,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-password-change-revokes-sessions.test.api.ts",
+      "line": 147,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-password-change-revokes-sessions.test.api.ts",
+      "line": 148,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-password-change-revokes-sessions.test.api.ts",
+      "line": 201,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-permissions-custom-conditions.test.api.js",
+      "line": 107,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-sessions-auth.test.api.ts",
+      "line": 167,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-sessions-auth.test.api.ts",
+      "line": 187,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-sessions-auth.test.api.ts",
+      "line": 218,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-sessions-auth.test.api.ts",
+      "line": 223,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-sessions-auth.test.api.ts",
+      "line": 226,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "tests/api/core/admin/admin-sessions-management.test.api.ts",
+      "line": 49,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-sessions-management.test.api.ts",
+      "line": 173,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-sessions-management.test.api.ts",
+      "line": 257,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-strategy-sessions.test.api.ts",
+      "line": 25,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-strategy-sessions.test.api.ts",
+      "line": 51,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-strategy-sessions.test.api.ts",
+      "line": 77,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-strategy-sessions.test.api.ts",
+      "line": 94,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/admin-strategy-sessions.test.api.ts",
+      "line": 146,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/data-transfer-push-security.test.api.ts",
+      "line": 340,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/register-admin-first-user.test.api.ts",
+      "line": 119,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/register-admin-first-user.test.api.ts",
+      "line": 147,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/register-admin-first-user.test.api.ts",
+      "line": 219,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/register-admin-first-user.test.api.ts",
+      "line": 229,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/content-manager/permissions-conditions.test.api.ts",
+      "line": 122,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/api/core/content-type-builder/rename-migration.test.api.js",
+      "line": 1512,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "tests/api/core/data-transfer/project-settings-logos.test.api.ts",
+      "line": 133,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/database/knex-utils.test.api.js",
+      "line": 24,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/mcp/mcp-audit-logs.test.api.ts",
+      "line": 56,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/mcp/mcp-content-manager-rbac.test.api.ts",
+      "line": 264,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/mcp/mcp-content-manager-rbac.test.api.ts",
+      "line": 288,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/mcp/mcp-content-manager-shaping.test.api.ts",
+      "line": 309,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/mcp/mcp-content-manager-shaping.test.api.ts",
+      "line": 312,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/review-workflows/review-workflows-audit-logs.test.api.ts",
+      "line": 40,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/review-workflows/review-workflows-stage-permissions.test.api.ts",
+      "line": 426,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/review-workflows/review-workflows-stage-permissions.test.api.ts",
+      "line": 432,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/review-workflows/review-workflows.test.api.ts",
+      "line": 804,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/single-type.test.api.js",
+      "line": 77,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/configure-view.test.api.js",
+      "line": 41,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/file-upload-and-url-import.test.api.js",
+      "line": 259,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/file-upload-and-url-import.test.api.js",
+      "line": 372,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/file-upload-and-url-import.test.api.js",
+      "line": 447,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/file.test.api.js",
+      "line": 118,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/file.test.api.js",
+      "line": 127,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/file.test.api.js",
+      "line": 136,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/file.test.api.js",
+      "line": 141,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/folder-file.test.api.js",
+      "line": 100,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/folder-file.test.api.js",
+      "line": 108,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/folder-file.test.api.js",
+      "line": 116,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/folder-file.test.api.js",
+      "line": 120,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/settings.test.api.js",
+      "line": 22,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/upload/admin/settings.test.api.js",
+      "line": 32,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/openapi-access.test.api.ts",
+      "line": 65,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/components/cleanup-after-delete.test.api.ts",
+      "line": 174,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/document-service/events.test.api.ts",
+      "line": 12,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts",
+      "line": 257,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts",
+      "line": 267,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts",
+      "line": 277,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts",
+      "line": 286,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts",
+      "line": 318,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts",
+      "line": 329,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts",
+      "line": 339,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts",
+      "line": 348,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/document-service/resources/fixtures/article.js",
+      "line": 19,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/fields/fields.test.api.js",
+      "line": 81,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/fields/fields.test.api.js",
+      "line": 92,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/populate/sanitize.test.api.js",
+      "line": 120,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 13,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 20,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 28,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 34,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 40,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 50,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 57,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 65,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 71,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 77,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 87,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 93,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 101,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 107,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/strapi/api/validate/resources/fixtures/document.js",
+      "line": 113,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/content-manager/api/relations-permissions.test.api.js",
+      "line": 157,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/content-manager/fields/non-visible.test.api.js",
+      "line": 65,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/provider-login.test.api.js",
+      "line": 24,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/provider-options.test.api.js",
+      "line": 24,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users-first-admin.test.api.ts",
+      "line": 49,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 22,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 165,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 193,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 194,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 305,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 328,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 337,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 463,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/admin-users.test.api.ts",
+      "line": 486,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts",
+      "line": 69,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts",
+      "line": 70,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts",
+      "line": 71,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts",
+      "line": 263,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts",
+      "line": 293,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts",
+      "line": 300,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts",
+      "line": 324,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts",
+      "line": 331,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/auth.test.api.ts",
+      "line": 44,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/tokens.test.api.ts",
+      "line": 19,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/webhooks.test.api.ts",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "tests/api/core/admin/ee/audit-logs/webhooks.test.api.ts",
+      "line": 21,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "templates/website/config/server.ts",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "scripts/front/reorder-admin-translation-files.js",
+      "line": 10,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "scripts/open-api/serve.js",
+      "line": 37,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "scripts/front/utils/search-files-content.js",
+      "line": 29,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "scripts/front/verify-translations/extract.ts",
+      "line": 134,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "scripts/front/verify-translations/extract.ts",
+      "line": 655,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "scripts/front/verify-translations/extract.ts",
+      "line": 693,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/utils/api-tests/auth.js",
+      "line": 9,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/utils/api-tests/mock-fetch.js",
+      "line": 41,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/utils/api-tests/request.js",
+      "line": 18,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/utils/api-tests/strapi.js",
+      "line": 13,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/utils/api-tests/strapi.js",
+      "line": 84,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/utils/api-tests/strapi.js",
+      "line": 94,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/utils/upgrade/src/tasks/codemods/list-codemods.ts",
+      "line": 43,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/utils/upgrade/src/modules/format/formats.ts",
+      "line": 37,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/utils/upgrade/src/modules/json/file.ts",
+      "line": 6,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/utils/upgrade/src/modules/npm/package.ts",
+      "line": 143,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/utils/upgrade/src/modules/project/project.ts",
+      "line": 64,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/utils/upgrade/src/modules/logger/__tests__/logger.test.ts",
+      "line": 116,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/utils/upgrade/src/modules/logger/__tests__/logger.test.ts",
+      "line": 122,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/utils/typescript/src/generators/index.ts",
+      "line": 38,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/utils/typescript/src/generators/common/imports.ts",
+      "line": 5,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/utils/typescript/src/compilers/__tests__/basic.test.ts",
+      "line": 59,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/utils/typescript/src/compilers/__tests__/basic.test.ts",
+      "line": 65,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/utils/oxlint-config/__tests__/overrides.vitest.test.ts",
+      "line": 1,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/utils/logger/src/configs/default-configuration.ts",
+      "line": 10,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/utils/logger/src/configs/output-file-configuration.ts",
+      "line": 22,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/providers/upload-local/src/index.ts",
+      "line": 90,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/providers/upload-local/src/index.ts",
+      "line": 138,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/upload-aws-s3/src/__tests__/utils.vitest.test.ts",
+      "line": 39,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/providers/email-sendmail/__tests__/index.vitest.test.ts",
+      "line": 23,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/providers/email-sendmail/__tests__/index.vitest.test.ts",
+      "line": 192,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/providers/email-sendmail/__tests__/index.vitest.test.ts",
+      "line": 224,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-sendmail/__tests__/index.vitest.test.ts",
+      "line": 235,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/providers/email-sendmail/__tests__/helpers/minimal-smtp-server.ts",
+      "line": 28,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-nodemailer/src/index.ts",
+      "line": 103,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-nodemailer/src/__tests__/index.vitest.test.ts",
+      "line": 232,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-nodemailer/src/__tests__/index.vitest.test.ts",
+      "line": 242,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-nodemailer/src/__tests__/index.vitest.test.ts",
+      "line": 368,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-nodemailer/src/__tests__/index.vitest.test.ts",
+      "line": 620,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-nodemailer/src/__tests__/index.vitest.test.ts",
+      "line": 621,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-nodemailer/src/__tests__/index.vitest.test.ts",
+      "line": 622,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-nodemailer/src/__tests__/index.vitest.test.ts",
+      "line": 672,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-amazon-ses/src/__tests__/backwards-compat.vitest.test.ts",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-amazon-ses/src/__tests__/backwards-compat.vitest.test.ts",
+      "line": 48,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-amazon-ses/src/__tests__/index.vitest.test.ts",
+      "line": 44,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-amazon-ses/src/__tests__/utils.vitest.test.ts",
+      "line": 135,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/providers/email-amazon-ses/src/__tests__/utils.vitest.test.ts",
+      "line": 142,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/controllers/user.js",
+      "line": 105,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/controllers/user.js",
+      "line": 168,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/controllers/user.js",
+      "line": 215,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/services/user.js",
+      "line": 109,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/utils/provider-http.js",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/utils/verify-jwt-with-jwks.js",
+      "line": 15,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/utils/oauth-connect/oauth1.js",
+      "line": 82,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/utils/oauth-connect/oauth1.js",
+      "line": 152,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/users-permissions/server/src/utils/oauth-connect/oauth2.js",
+      "line": 77,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/oauth-connect.test.js",
+      "line": 44,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/oauth-connect.test.js",
+      "line": 69,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/oauth-connect.test.js",
+      "line": 299,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/oauth-connect.test.js",
+      "line": 300,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/oauth-connect.test.js",
+      "line": 378,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 14,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 59,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 78,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 102,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 114,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 129,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 130,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 131,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 135,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 142,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 143,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 147,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 148,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 154,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 155,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 164,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/utils/__tests__/trim-grant-session-response.test.js",
+      "line": 174,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 51,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 52,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 70,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 71,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 92,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 117,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 138,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 157,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 168,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 180,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/jwt.test.js",
+      "line": 194,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 30,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 147,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 155,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 163,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 171,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 179,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 200,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 210,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 220,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 249,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 259,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 269,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 292,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 303,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 310,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 334,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 347,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 371,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 389,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 401,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 420,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 428,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 451,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 463,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 479,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 481,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 491,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 502,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 504,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 517,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 543,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 554,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 576,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 586,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 613,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 628,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 653,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 663,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 672,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/services/__tests__/providers-registry.test.js",
+      "line": 683,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/graphql/mutations/auth/__tests__/rate-limit.test.js",
+      "line": 198,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/graphql/mutations/auth/__tests__/rate-limit.test.js",
+      "line": 294,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/graphql/mutations/auth/__tests__/rate-limit.test.js",
+      "line": 301,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/graphql/mutations/auth/__tests__/rate-limit.test.js",
+      "line": 309,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/graphql/mutations/auth/__tests__/rate-limit.test.js",
+      "line": 310,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 102,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 154,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 187,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 220,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 263,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 306,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 380,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 389,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 398,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 439,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 500,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 501,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 509,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 510,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 518,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 519,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 524,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 530,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 536,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 542,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 560,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 613,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 614,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 630,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 650,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 651,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 672,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 673,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 689,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/auth.test.js",
+      "line": 711,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/plugins/users-permissions/server/src/controllers/validation/__tests__/email-template.test.js",
+      "line": 33,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/admin/src/tests/setup.js",
+      "line": 171,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/plugins/users-permissions/admin/src/tests/setup.js",
+      "line": 181,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/admin/src/pages/Providers/tests/schema.test.js",
+      "line": 26,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/admin/src/pages/Providers/tests/schema.test.js",
+      "line": 61,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/admin/src/pages/Providers/tests/schema.test.js",
+      "line": 94,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/users-permissions/admin/src/pages/Providers/tests/schema.test.js",
+      "line": 128,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/plugins/i18n/server/src/services/ai-translations-strapi-managed.ts",
+      "line": 31,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/i18n/server/src/services/__tests__/ai-localizations.test.ts",
+      "line": 598,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/i18n/server/src/services/__tests__/ai-translations.test.ts",
+      "line": 14,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/i18n/server/src/services/__tests__/fill-from-locale.test.ts",
+      "line": 174,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/i18n/server/src/services/__tests__/fill-from-locale.test.ts",
+      "line": 353,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/plugins/i18n/admin/tests/setup.ts",
+      "line": 4,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/plugins/graphql/server/src/services/constants.ts",
+      "line": 46,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/plugins/graphql/server/src/services/type-registry.ts",
+      "line": 99,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/plugins/documentation/tests/setup.ts",
+      "line": 4,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/index.ts",
+      "line": 118,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/index.ts",
+      "line": 128,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 172,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 176,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 192,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 201,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 207,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 219,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 225,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 329,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 335,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 340,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 346,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 378,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 384,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 398,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type-folders.vitest.test.ts",
+      "line": 405,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type.vitest.test.ts",
+      "line": 48,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type.vitest.test.ts",
+      "line": 97,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type.vitest.test.ts",
+      "line": 100,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type.vitest.test.ts",
+      "line": 101,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/generators/generators/src/plops/__tests__/content-type.vitest.test.ts",
+      "line": 174,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/generators/generators/src/plops/utils/__tests__/extend-plugin-index.files.vitest.test.ts",
+      "line": 347,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/generators/generators/src/plops/utils/__tests__/extend-plugin-index.files.vitest.test.ts",
+      "line": 365,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 82,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 132,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 134,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 147,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 149,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 160,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 162,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 175,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 177,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 179,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 189,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 191,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 193,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 205,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 207,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 209,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 219,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 221,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 223,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 238,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 240,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 253,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 255,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 266,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 268,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 284,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 286,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 302,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/utils/src/publication-filter.ts",
+      "line": 304,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/__tests__/sessions.test.ts",
+      "line": 53,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/__tests__/user-agent.test.ts",
+      "line": 14,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/__tests__/user-agent.test.ts",
+      "line": 18,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/__tests__/user-agent.test.ts",
+      "line": 30,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/__tests__/user-agent.test.ts",
+      "line": 43,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/__tests__/user-agent.test.ts",
+      "line": 47,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/__tests__/user-agent.test.ts",
+      "line": 51,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/__tests__/user-agent.test.ts",
+      "line": 60,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/validation/route-validators/query-params.ts",
+      "line": 12,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/validation/route-validators/query-params.ts",
+      "line": 20,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/utils/src/validation/route-validators/query-params.ts",
+      "line": 28,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/upload/server/src/controllers/admin-folder-file.ts",
+      "line": 209,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/upload/server/src/controllers/admin-folder-file.ts",
+      "line": 224,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/server/src/services/ai-metadata-strapi-managed.ts",
+      "line": 41,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/upload/server/src/services/file.ts",
+      "line": 25,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/server/src/services/file.ts",
+      "line": 234,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/upload/server/src/services/folder.ts",
+      "line": 214,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/upload/server/src/services/folder.ts",
+      "line": 229,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/server/src/services/image-manipulation.ts",
+      "line": 29,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/upload/server/src/services/weekly-metrics.ts",
+      "line": 60,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/server/src/utils/images.ts",
+      "line": 14,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/upload/server/src/services/__tests__/ai-metadata-provider.test.ts",
+      "line": 14,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/upload/server/src/services/__tests__/ai-metadata-strapi-managed.test.ts",
+      "line": 7,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/server/src/services/__tests__/file.test.ts",
+      "line": 190,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/server/src/services/__tests__/file.test.ts",
+      "line": 350,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/server/src/services/__tests__/file.test.ts",
+      "line": 402,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/upload/server/src/controllers/__tests__/admin-upload.test.ts",
+      "line": 867,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/upload/admin/tests/setup.ts",
+      "line": 10,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/admin/src/services/api.ts",
+      "line": 489,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/admin/src/services/uploadFileViaXHR.ts",
+      "line": 43,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/admin/src/utils/downloadFile.ts",
+      "line": 7,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/upload/admin/src/services/tests/uploadFileSilently.test.ts",
+      "line": 17,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/upload/admin/src/services/tests/uploadFolderScope.test.ts",
+      "line": 32,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/upload/admin/src/services/tests/uploadFromUrlsProgress.test.ts",
+      "line": 19,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/upload/admin/src/services/tests/uploadMergeGuard.test.ts",
+      "line": 24,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/upload/admin/src/services/tests/uploadPool.test.ts",
+      "line": 43,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/admin/src/legacy/utils/downloadFile.ts",
+      "line": 2,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/upload/admin/src/legacy/utils/urlsToAssets.ts",
+      "line": 12,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/upload/admin/src/legacy/pages/App/components/BulkActions.tsx",
+      "line": 31,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/types/src/modules/fetch.ts",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/node/core/admin-vite-optimize-exclude.ts",
+      "line": 196,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/node/core/dependencies.ts",
+      "line": 17,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/node/core/dependencies.ts",
+      "line": 25,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/node/core/dependencies.ts",
+      "line": 265,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/node/vite/watch.ts",
+      "line": 68,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/strapi/src/node/core/__tests__/admin-vite-aliases-tolerant.test.ts",
+      "line": 28,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/strapi/src/node/core/__tests__/admin-vite-optimize-exclude.test.ts",
+      "line": 53,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/strapi/src/node/core/__tests__/admin-vite-optimize-exclude.test.ts",
+      "line": 124,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/strapi/src/cli/utils/pkg.ts",
+      "line": 19,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/utils/pkg.ts",
+      "line": 65,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/utils/telemetry.ts",
+      "line": 6,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/configuration/dump.ts",
+      "line": 33,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/transfer/__tests__/transfer.cli.test.ts",
+      "line": 72,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/transfer/__tests__/transfer.cli.test.ts",
+      "line": 93,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/transfer/__tests__/transfer.cli.test.ts",
+      "line": 144,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/transfer/__tests__/transfer.cli.test.ts",
+      "line": 157,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/transfer/__tests__/transfer.test.ts",
+      "line": 106,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/transfer/__tests__/transfer.test.ts",
+      "line": 109,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/license.ts",
+      "line": 33,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/license.ts",
+      "line": 73,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/license.ts",
+      "line": 150,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/registry-access.ts",
+      "line": 68,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/registry-access.ts",
+      "line": 80,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/action.test.ts",
+      "line": 117,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/action.test.ts",
+      "line": 367,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/action.test.ts",
+      "line": 382,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/action.test.ts",
+      "line": 398,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/license.test.ts",
+      "line": 178,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/license.test.ts",
+      "line": 186,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/license.test.ts",
+      "line": 200,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/license.test.ts",
+      "line": 202,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/license.test.ts",
+      "line": 205,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/license.test.ts",
+      "line": 205,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/license.test.ts",
+      "line": 222,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 113,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 163,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 185,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 187,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 210,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 256,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 270,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 282,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 311,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 374,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 392,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 411,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 447,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 529,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/enterprise/install/__tests__/registry-access.test.ts",
+      "line": 556,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 44,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 95,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 154,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 217,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 247,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 284,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 350,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 383,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/create-user.test.ts",
+      "line": 416,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/reset-user-password.test.ts",
+      "line": 35,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/reset-user-password.test.ts",
+      "line": 80,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/strapi/src/cli/commands/admin/__tests__/reset-user-password.test.ts",
+      "line": 124,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/review-workflows/server/src/services/stages.ts",
+      "line": 346,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/review-workflows/admin/tests/setup.ts",
+      "line": 6,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/email/shared/email-address-parser.ts",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/index.ts",
+      "line": 157,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/entity-manager/regular-relations.ts",
+      "line": 294,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/entity-manager/regular-relations.ts",
+      "line": 310,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/entity-manager/regular-relations.ts",
+      "line": 352,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/entity-manager/regular-relations.ts",
+      "line": 367,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/migrations/resolver.ts",
+      "line": 24,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/schema/builder.ts",
+      "line": 247,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/schema/builder.ts",
+      "line": 452,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/schema/builder.ts",
+      "line": 485,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/schema/builder.ts",
+      "line": 487,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/schema/builder.ts",
+      "line": 494,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/schema/builder.ts",
+      "line": 502,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/schema/builder.ts",
+      "line": 565,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/database/src/__tests__/index.test.ts",
+      "line": 69,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/database/src/__tests__/index.test.ts",
+      "line": 87,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/schema/__tests__/rename-helpers.test.ts",
+      "line": 38,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/order-by.ts",
+      "line": 38,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 279,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 296,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 336,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 340,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 347,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 351,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 358,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 363,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 368,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/where.ts",
+      "line": 376,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/populate/apply.ts",
+      "line": 139,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/populate/apply.ts",
+      "line": 267,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/query/helpers/populate/apply.ts",
+      "line": 356,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/migrations/internal-migrations/5.0.0-01-convert-identifiers-long-than-max-length.ts",
+      "line": 97,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/migrations/internal-migrations/5.0.0-01-convert-identifiers-long-than-max-length.ts",
+      "line": 105,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/database/src/migrations/__tests__/file-builder.test.ts",
+      "line": 114,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/database/src/migrations/__tests__/fresh-db-rename.test.ts",
+      "line": 113,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/database/src/migrations/__tests__/fresh-db-rename.test.ts",
+      "line": 137,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/migrations/__tests__/fresh-db-rename.test.ts",
+      "line": 183,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/migrations/__tests__/fresh-db-rename.test.ts",
+      "line": 198,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/migrations/__tests__/fresh-db-rename.test.ts",
+      "line": 203,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/migrations/__tests__/fresh-db-rename.test.ts",
+      "line": 213,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/migrations/__tests__/fresh-db-rename.test.ts",
+      "line": 228,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/database-inspector.ts",
+      "line": 25,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/index.ts",
+      "line": 58,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/index.ts",
+      "line": 77,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/index.ts",
+      "line": 78,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/index.ts",
+      "line": 85,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/index.ts",
+      "line": 107,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/index.ts",
+      "line": 116,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/index.ts",
+      "line": 120,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/index.ts",
+      "line": 128,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/schema-inspector.ts",
+      "line": 193,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/schema-inspector.ts",
+      "line": 233,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/mysql/schema-inspector.ts",
+      "line": 284,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/postgresql/index.ts",
+      "line": 47,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/postgresql/index.ts",
+      "line": 65,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/postgresql/index.ts",
+      "line": 78,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/postgresql/index.ts",
+      "line": 96,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/postgresql/index.ts",
+      "line": 102,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/sqlite/index.ts",
+      "line": 45,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/sqlite/index.ts",
+      "line": 61,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/sqlite/index.ts",
+      "line": 67,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/sqlite/index.ts",
+      "line": 94,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/database/src/dialects/sqlite/index.ts",
+      "line": 98,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/data-transfer/src/strapi/queries/link.ts",
+      "line": 177,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/data-transfer/src/strapi/queries/link.ts",
+      "line": 179,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/data-transfer/src/strapi/queries/link.ts",
+      "line": 190,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/strapi/utils/project-settings-logos.ts",
+      "line": 109,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/strapi/utils/project-settings-logos.ts",
+      "line": 130,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/strapi/providers/local-source/assets.ts",
+      "line": 23,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/strapi/providers/local-source/assets.ts",
+      "line": 54,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/data-transfer/src/strapi/providers/local-destination/strategies/restore/links.ts",
+      "line": 40,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/data-transfer/src/strapi/providers/local-destination/strategies/restore/links.ts",
+      "line": 44,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/data-transfer/src/strapi/providers/local-destination/strategies/restore/links.ts",
+      "line": 47,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/file/providers/destination/index.ts",
+      "line": 122,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/file/providers/source/__tests__/index.test.ts",
+      "line": 29,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/file/providers/source/__tests__/index.test.ts",
+      "line": 309,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/file/providers/source/__tests__/index.test.ts",
+      "line": 434,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/engine/__tests__/engine.test.ts",
+      "line": 1600,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/engine/__tests__/engine.test.ts",
+      "line": 1644,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/data-transfer/src/directory/providers/destination/index.ts",
+      "line": 184,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/core/src/Strapi.ts",
+      "line": 132,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/core/src/Strapi.ts",
+      "line": 270,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/core/src/Strapi.ts",
+      "line": 401,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/core/src/Strapi.ts",
+      "line": 405,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/core/src/configuration/urls.ts",
+      "line": 85,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/core/src/ee/license.ts",
+      "line": 146,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/core/src/services/webhook-runner.ts",
+      "line": 117,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/core/src/utils/fetch.ts",
+      "line": 24,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/core/src/services/metrics/sender.ts",
+      "line": 109,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/core/src/services/server/index.ts",
+      "line": 105,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 66,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 95,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 129,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 163,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 209,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 252,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 288,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 327,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 355,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 375,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 425,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts",
+      "line": 461,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 44,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 180,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 594,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 636,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 672,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 677,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 697,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 721,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/__tests__/session-manager.test.ts",
+      "line": 942,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/services/mcp/internal/__tests__/McpServerFactory.test.ts",
+      "line": 40,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/core/src/services/document-service/utils/bidirectional-relations.ts",
+      "line": 372,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/core/src/providers/__tests__/session-manager.test.ts",
+      "line": 53,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/core/src/migrations/database/5.0.0-discard-drafts.ts",
+      "line": 217,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/core/src/migrations/database/5.0.0-discard-drafts.ts",
+      "line": 231,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/core/src/migrations/database/5.0.0-discard-drafts.ts",
+      "line": 1020,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/core/src/migrations/database/5.0.0-discard-drafts.ts",
+      "line": 2634,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/server/src/services/__tests__/api-handler.test.ts",
+      "line": 42,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/server/src/services/__tests__/api-handler.test.ts",
+      "line": 48,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/server/src/services/__tests__/api-handler.test.ts",
+      "line": 84,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/server/src/services/__tests__/api-handler.test.ts",
+      "line": 87,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/server/src/services/__tests__/api-handler.test.ts",
+      "line": 105,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/content-type-builder/admin/src/components/DataManager/tests/DataManagerProvider.renameConsent.test.tsx",
+      "line": 238,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/admin/src/components/AIChat/components/Base64Image.tsx",
+      "line": 72,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/admin/src/components/AIChat/hooks/useFigmaUpload.ts",
+      "line": 118,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/admin/src/components/AIChat/hooks/useFigmaUpload.ts",
+      "line": 187,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-type-builder/admin/src/components/AIChat/lib/aiClient.ts",
+      "line": 204,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-type-builder/admin/src/components/AIChat/tests/aiClient.test.ts",
+      "line": 41,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-type-builder/admin/src/components/AIChat/tests/aiClient.test.ts",
+      "line": 50,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-type-builder/admin/src/components/AIChat/tests/aiClient.test.ts",
+      "line": 60,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/content-releases/admin/tests/setup.ts",
+      "line": 4,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/content-releases/admin/src/validation/schemas.ts",
+      "line": 25,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-manager/server/src/preview/controllers/preview.ts",
+      "line": 46,
+      "test_fixture": false
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/previewScript.js",
+      "line": 81,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 24,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 75,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 223,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 313,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 459,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 546,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 676,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 822,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 919,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/server/src/preview/controllers/__tests__/previewScript.test.ts",
+      "line": 920,
+      "test_fixture": true
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/content-manager/server/src/homepage/services/homepage.ts",
+      "line": 355,
+      "test_fixture": false
+    },
+    {
+      "category": "raw_queries",
+      "path": "packages/core/content-manager/server/src/homepage/services/homepage.ts",
+      "line": 371,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/content-manager/admin/tests/setup.ts",
+      "line": 6,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 86,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 91,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 100,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 101,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 102,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 121,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 122,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 124,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 125,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 126,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 129,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 135,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 136,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 137,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/tests/data.ts",
+      "line": 143,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/content-manager/admin/src/preview/pages/Preview.tsx",
+      "line": 104,
+      "test_fixture": false
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/admin/src/preview/pages/Preview.tsx",
+      "line": 156,
+      "test_fixture": false
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/admin/src/preview/pages/Preview.tsx",
+      "line": 314,
+      "test_fixture": false
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/admin/src/preview/utils/getSendMessage.ts",
+      "line": 19,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/content-manager/admin/src/pages/EditView/utils/tests/data.test.ts",
+      "line": 72,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/PreviewWysiwyg.tsx",
+      "line": 20,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/utils.ts",
+      "line": 153,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/utils.ts",
+      "line": 154,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/utils/debug-dump/__tests__/redact.test.ts",
+      "line": 109,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/utils/debug-dump/__tests__/redact.test.ts",
+      "line": 207,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/api-token.test.ts",
+      "line": 51,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/api-token.test.ts",
+      "line": 52,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/api-token.test.ts",
+      "line": 53,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 26,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 52,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 79,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 106,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 116,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 124,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 191,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 225,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 292,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 343,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 366,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 396,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 426,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 462,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/auth.test.ts",
+      "line": 484,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/debug-dump.test.ts",
+      "line": 34,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/debug-dump.test.ts",
+      "line": 225,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/permissions-manager-sanitize.test.ts",
+      "line": 393,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/permissions-manager-sanitize.test.ts",
+      "line": 394,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/permissions-manager-sanitize.test.ts",
+      "line": 395,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/permissions-manager-sanitize.test.ts",
+      "line": 428,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/token.test.ts",
+      "line": 211,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/token.test.ts",
+      "line": 233,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/token.test.ts",
+      "line": 244,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/token.test.ts",
+      "line": 251,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/token.test.ts",
+      "line": 273,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 55,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 56,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 137,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 187,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 245,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 332,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 365,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 480,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 906,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 938,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 946,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 965,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 1001,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 1035,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/services/__tests__/user.test.ts",
+      "line": 1085,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/admin/server/src/domain/condition/provider.ts",
+      "line": 7,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/admin/server/src/domain/condition/provider.ts",
+      "line": 8,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 84,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 212,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 213,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 244,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 245,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 281,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 282,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 311,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 312,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 344,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 345,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 379,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts",
+      "line": 380,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/controllers/__tests__/authentication.test.ts",
+      "line": 29,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/audit-logs/__tests__/admin-users.test.ts",
+      "line": 215,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/audit-logs/__tests__/admin-users.test.ts",
+      "line": 231,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/server/src/ai/services/ai.ts",
+      "line": 167,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/server/src/ai/services/ai.ts",
+      "line": 255,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/ai/services/__tests__/ai.test.ts",
+      "line": 261,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/server/src/ai/controllers/__tests__/ai.test.ts",
+      "line": 103,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/services/__tests__/user.test.ts",
+      "line": 80,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/controllers/authentication-utils/__tests__/middlewares.test.ts",
+      "line": 46,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/controllers/authentication-utils/__tests__/middlewares.test.ts",
+      "line": 49,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/admin/ee/server/src/controllers/authentication-utils/__tests__/middlewares.test.ts",
+      "line": 60,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/controllers/authentication-utils/__tests__/middlewares.test.ts",
+      "line": 298,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/controllers/authentication-utils/__tests__/middlewares.test.ts",
+      "line": 374,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/utils/__tests__/export-token.test.ts",
+      "line": 3,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/services/__tests__/create-export-stream.test.ts",
+      "line": 7,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/services/__tests__/create-export-stream.test.ts",
+      "line": 301,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.test.ts",
+      "line": 27,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.test.ts",
+      "line": 138,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.test.ts",
+      "line": 145,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.test.ts",
+      "line": 158,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.test.ts",
+      "line": 172,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.test.ts",
+      "line": 174,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/ee/admin/src/pages/tests/AuthResponse.test.tsx",
+      "line": 77,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/reducer.ts",
+      "line": 24,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/tests/server.ts",
+      "line": 311,
+      "test_fixture": true
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/core/admin/admin/tests/setup.ts",
+      "line": 4,
+      "test_fixture": true
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/components/NpsSurvey.tsx",
+      "line": 200,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/features/Auth.tsx",
+      "line": 109,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/features/Tracking.tsx",
+      "line": 76,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/layouts/AuthenticatedLayout.tsx",
+      "line": 40,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/pages/UseCasePage.tsx",
+      "line": 85,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/utils/browserStrapi.ts",
+      "line": 68,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/utils/getFetchClient.ts",
+      "line": 24,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/utils/getFetchClient.ts",
+      "line": 164,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/utils/getFetchClient.ts",
+      "line": 380,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/utils/getFetchClient.ts",
+      "line": 524,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/utils/getFetchClient.ts",
+      "line": 601,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/utils/getFetchClient.ts",
+      "line": 636,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/utils/getFetchClient.ts",
+      "line": 671,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/core/admin/admin/src/utils/getFetchClient.ts",
+      "line": 695,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/utils/tests/getFetchClient.test.ts",
+      "line": 361,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/utils/tests/getFetchClient.test.ts",
+      "line": 679,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/utils/tests/getFetchClient.test.ts",
+      "line": 723,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/utils/tests/getFetchClient.test.ts",
+      "line": 769,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/utils/tests/getFetchClient.test.ts",
+      "line": 807,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/utils/tests/getFetchClient.test.ts",
+      "line": 845,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/pages/Auth/constants.ts",
+      "line": 13,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/pages/Auth/constants.ts",
+      "line": 14,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/admin/admin/src/pages/Settings/pages/Users/utils/validation.ts",
+      "line": 36,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/admin/admin/src/pages/Settings/pages/ApplicationInfo/components/tests/DiagnosticSnapshotModal.test.tsx",
+      "line": 90,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/admin/admin/src/pages/Auth/components/Register.tsx",
+      "line": 51,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/admin/admin/src/pages/Auth/components/Register.tsx",
+      "line": 142,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/admin/admin/src/pages/Auth/components/ResetPassword.tsx",
+      "line": 40,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/hooks/tests/useSessionKeepalive.test.ts",
+      "line": 184,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/features/tests/Auth.test.tsx",
+      "line": 12,
+      "test_fixture": true
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "packages/core/admin/admin/src/components/tests/Form.test.tsx",
+      "line": 8,
+      "test_fixture": true
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/components/tests/PrivateRoute.test.tsx",
+      "line": 9,
+      "test_fixture": true
+    },
+    {
+      "category": "browser_sinks",
+      "path": "packages/core/admin/admin/src/components/GuidedTour/Steps/Step.tsx",
+      "line": 265,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/components/GuidedTour/utils/constants.ts",
+      "line": 10,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "packages/core/admin/admin/src/components/GuidedTour/utils/constants.ts",
+      "line": 11,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/cli/create-strapi-app/templates/vanilla-js/config/server.js",
+      "line": 2,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/cli/create-strapi-app/templates/vanilla/config/server.ts",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/cli/create-strapi-app/templates/example-js/config/server.js",
+      "line": 2,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/cli/create-strapi-app/templates/example/config/server.ts",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/cli/create-strapi-app/src/utils/dot-env.ts",
+      "line": 10,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/cli/create-strapi-app/src/utils/template.ts",
+      "line": 138,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/cli/create-strapi-app/src/utils/template.ts",
+      "line": 154,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/cli/create-strapi-app/src/utils/template.ts",
+      "line": 218,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/cli/create-strapi-app/src/utils/usage.ts",
+      "line": 63,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/cli/cloud/src/utils/compress-files.ts",
+      "line": 72,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "packages/cli/cloud/src/utils/pkg.ts",
+      "line": 19,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "packages/cli/cloud/src/utils/pkg.ts",
+      "line": 67,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/complex/docker-compose.dev.yml",
+      "line": 11,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/complex/docker-compose.dev.yml",
+      "line": 25,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/complex/docker-compose.dev.yml",
+      "line": 38,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/kitchensink-ts/config/server.ts",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/kitchensink/config/server.js",
+      "line": 2,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "examples/getstarted/config/database.js",
+      "line": 18,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "examples/getstarted/config/database.js",
+      "line": 30,
+      "test_fixture": false
+    },
+    {
+      "category": "secrets_candidates",
+      "path": "examples/getstarted/config/database.js",
+      "line": 42,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/getstarted/config/server.js",
+      "line": 6,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/getstarted/src/index.js",
+      "line": 16,
+      "test_fixture": false
+    },
+    {
+      "category": "browser_sinks",
+      "path": "examples/getstarted/src/admin/preview/dummy-preview.jsx",
+      "line": 305,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "examples/getstarted/src/admin/preview/index.jsx",
+      "line": 39,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": "examples/getstarted/src/admin/preview/index.jsx",
+      "line": 40,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/getstarted/config/src/cron-tasks.js",
+      "line": 19,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/empty/config/server.ts",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/complex/config/server.ts",
+      "line": 4,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/bench.ts",
+      "line": 20,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/bench.ts",
+      "line": 155,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/bench.ts",
+      "line": 160,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/bench.ts",
+      "line": 188,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/bench.ts",
+      "line": 199,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/bench.ts",
+      "line": 392,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/bench.ts",
+      "line": 400,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/bench.ts",
+      "line": 407,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/compose.ts",
+      "line": 18,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mariadb.ts",
+      "line": 24,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 3,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 55,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 88,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 117,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 122,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 139,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 164,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 170,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-mysql.ts",
+      "line": 188,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 3,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 62,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 95,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 124,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 128,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 133,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 151,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 161,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 165,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 185,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-postgres.ts",
+      "line": 199,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/db-utils.ts",
+      "line": 3,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/develop-with-db.ts",
+      "line": 3,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/develop-with-db.ts",
+      "line": 82,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/run-bench-hook-smoke.js",
+      "line": 10,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/complex/scripts/setup-v4-project.ts",
+      "line": 213,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/complex/scripts/setup-v4-project.ts",
+      "line": 508,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": "examples/complex/scripts/write-pinned-app-config.ts",
+      "line": 90,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/v4/develop-with-db.ts",
+      "line": 3,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/v4/develop-with-db.ts",
+      "line": 67,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/v4/seed-with-db.ts",
+      "line": 3,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": "examples/complex/scripts/v4/seed-with-db.ts",
+      "line": 72,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": ".github/scripts/community-pr-lifecycle.ts",
+      "line": 43,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": ".github/workflows/tests.yml",
+      "line": 585,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": ".github/workflows/tests.yml",
+      "line": 625,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": ".github/workflows/tests.yml",
+      "line": 693,
+      "test_fixture": false
+    },
+    {
+      "category": "ports_and_binding",
+      "path": ".github/workflows/tests.yml",
+      "line": 736,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": ".github/actions/draft-release/index.ts",
+      "line": 78,
+      "test_fixture": false
+    },
+    {
+      "category": "urls_and_files",
+      "path": ".github/actions/draft-release/index.ts",
+      "line": 81,
+      "test_fixture": false
+    },
+    {
+      "category": "shell_or_dynamic_code",
+      "path": ".github/actions/draft-release/lib/range.ts",
+      "line": 1,
+      "test_fixture": false
+    }
+  ]
+}

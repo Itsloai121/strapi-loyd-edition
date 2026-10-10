@@ -1,0 +1,1042 @@
+[
+  {
+    "id": "C001",
+    "priority": "P1",
+    "title": "Define scope and rules of engagement",
+    "status": "Pass",
+    "severity": "Low",
+    "evidence": "prompt.txt:3; evidence/scope.md:1-12",
+    "assessment": "Ownership/authorization asserted. This assessment is confined to supplied source and sandbox-only checks; no remote systems are tested.",
+    "evidence_full": "prompt.txt:3; evidence/scope.md:1-12"
+  },
+  {
+    "id": "C002",
+    "priority": "P1",
+    "title": "Inventory entry points",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S18:76-95; evidence/route-candidates.csv",
+    "assessment": "Literal routes inventoried, but dynamic CRUD factories, enabled plugins and stored permissions require a runtime route dump.",
+    "evidence_full": "packages/core/core/src/services/server/compose-endpoint.ts:76-95; evidence/route-candidates.csv"
+  },
+  {
+    "id": "C003",
+    "priority": "P1",
+    "title": "Identify roles and trust boundaries",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S18:85-92; S40:99-134",
+    "assessment": "Admin/content API strategies exist. Effective roles and object ownership policies require the deployed permission store and test accounts.",
+    "evidence_full": "packages/core/core/src/services/server/compose-endpoint.ts:85-92; packages/core/core/src/services/auth/index.ts:99-134"
+  },
+  {
+    "id": "C004",
+    "priority": "P2",
+    "title": "Lightweight threat model",
+    "status": "Pass",
+    "severity": "Low",
+    "evidence": "evidence/threat-model.md:1-16",
+    "assessment": "A scoped top-ten threat model is included. Ranking is provisional without deployment and business context.",
+    "evidence_full": "evidence/threat-model.md:1-16"
+  },
+  {
+    "id": "C005",
+    "priority": "P2",
+    "title": "Tech stack and dependency fingerprint",
+    "status": "Pass",
+    "severity": "Low",
+    "evidence": "S31:1-3; S32:24-29; S33:1-8",
+    "assessment": "Strapi 5.57.0 monorepo; Node.js, TypeScript/JavaScript, React admin, Koa, Knex, optional GraphQL/Apollo, Yarn 4 workspaces and SQL/SQLite providers.",
+    "evidence_full": "packages/core/core/package.json:1-3; package.json:24-29; yarn.lock:1-8"
+  },
+  {
+    "id": "C006",
+    "priority": "P1",
+    "title": "SQL / NoSQL injection",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S20:49-59,115-163; S19:24-30",
+    "assessment": "Query helper validates operators; controllers validate query input. Raw-query candidates are inventoried, not exhaustively taint-traced.",
+    "evidence_full": "packages/core/database/src/query/helpers/where.ts:49-59,115-163; packages/core/core/src/core-api/controller/collection-type.ts:24-30"
+  },
+  {
+    "id": "C007",
+    "priority": "P1",
+    "title": "OS command injection",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "evidence/source-pattern-inventory.json",
+    "assessment": "Shell/dynamic-code candidates include CLI/build paths. No confirmed HTTP-input-to-command exploit was established; full tracing remains.",
+    "evidence_full": "evidence/source-pattern-inventory.json"
+  },
+  {
+    "id": "C008",
+    "priority": "P1",
+    "title": "Path traversal & file I/O",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S08:62-83,205-235; S17:87-96",
+    "assessment": "URL filenames use basename and upload paths use generated hash/ext. Archive extraction and symlink safety need a complete path review.",
+    "evidence_full": "packages/core/upload/server/src/services/file.ts:62-83,205-235; packages/providers/upload-local/src/index.ts:87-96"
+  },
+  {
+    "id": "C009",
+    "priority": "P1",
+    "title": "Unsafe deserialization",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "evidence/source-pattern-inventory.json; S32:24-29",
+    "assessment": "JavaScript source and dependency manifests were inspected. No blanket assurance for all serializers or installed extensions is justified.",
+    "evidence_full": "evidence/source-pattern-inventory.json; package.json:24-29"
+  },
+  {
+    "id": "C010",
+    "priority": "P1",
+    "title": "DOM-based & server-side XSS",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S25:12-20; S26:67-74",
+    "assessment": "WYSIWYG preview sanitizes output with DOMPurify. This is a positive control, not proof that every rendering context is safe.",
+    "evidence_full": "packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/PreviewWysiwyg.tsx:12-20; packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/sanitizer.ts:67-74"
+  },
+  {
+    "id": "C011",
+    "priority": "P1",
+    "title": "Server-side request forgery (code level)",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S08:133-149; S28:114-131",
+    "assessment": "URL import checks DNS once then fetch follows redirects; DNS lookup is not pinned to the connection. F04 partially mitigated; webhook egress also needs review.",
+    "evidence_full": "packages/core/upload/server/src/services/file.ts:133-149; packages/core/core/src/services/webhook-runner.ts:114-131"
+  },
+  {
+    "id": "C012",
+    "priority": "P2",
+    "title": "Server-side template injection (SSTI)",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S09:506-521; evidence/source-pattern-inventory.json",
+    "assessment": "Email templating is used. Administrator-authored template reachability and safe interpolation need a complete review.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:506-521; evidence/source-pattern-inventory.json"
+  },
+  {
+    "id": "C013",
+    "priority": "P2",
+    "title": "XXE and XML handling",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S36:280-287",
+    "assessment": "SVG/XML-like uploads are accepted under allowlists. No complete parser configuration inventory or XXE execution test was performed.",
+    "evidence_full": "packages/core/upload/server/src/utils/mime-validation.ts:280-287"
+  },
+  {
+    "id": "C014",
+    "priority": "P2",
+    "title": "LDAP / XPath / header / log injection",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S28:124-129; S27:31-59",
+    "assessment": "Webhook headers and public errors carry configured values. LDAP/XPath applicability and CRLF/log encoding paths are not fully established.",
+    "evidence_full": "packages/core/core/src/services/webhook-runner.ts:124-129; packages/core/core/src/services/errors.ts:31-59"
+  },
+  {
+    "id": "C015",
+    "priority": "P2",
+    "title": "Open redirects and unvalidated forwards",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S23:44-69; S09:452-462",
+    "assessment": "OAuth callback validation compares exact origin and pathname. Other redirect paths and query-parameter abuse require review.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/config.js:44-69; packages/plugins/users-permissions/server/src/controllers/auth.js:452-462"
+  },
+  {
+    "id": "C016",
+    "priority": "P2",
+    "title": "Prototype pollution & unsafe object merging (JS)",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S14:222-232; S16:31-34; evidence/osv-results.json",
+    "assessment": "Object merging is present; OSV flags a GraphQL utility dependency. Untrusted-data reachability is not confirmed.",
+    "evidence_full": "packages/plugins/graphql/server/src/bootstrap.ts:222-232; packages/core/core/src/middlewares/security.ts:31-34; evidence/osv-results.json"
+  },
+  {
+    "id": "C017",
+    "priority": "P2",
+    "title": "Regular-expression DoS (ReDoS)",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S08:66-68; evidence/source-pattern-inventory.json",
+    "assessment": "Regular expressions were inventoried selectively. No recheck/RE2 or adversarial timing analysis across all regexes was completed.",
+    "evidence_full": "packages/core/upload/server/src/services/file.ts:66-68; evidence/source-pattern-inventory.json"
+  },
+  {
+    "id": "C018",
+    "priority": "P2",
+    "title": "File upload handling (code)",
+    "status": "Fail",
+    "severity": "Medium",
+    "evidence": "S17:53-54,87-96; S36:280-287",
+    "assessment": "Default local upload storage is under the public directory, not a separate origin. SVG allowance depends on config. F12 remains; no XSS exploit is asserted.",
+    "evidence_full": "packages/providers/upload-local/src/index.ts:53-54,87-96; packages/core/upload/server/src/utils/mime-validation.ts:280-287"
+  },
+  {
+    "id": "C019",
+    "priority": "P3",
+    "title": "Insecure use of reflection, dynamic code, and eval",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "evidence/source-pattern-inventory.json",
+    "assessment": "Dynamic-code candidates are locations for follow-up, not demonstrated input-to-eval paths.",
+    "evidence_full": "evidence/source-pattern-inventory.json"
+  },
+  {
+    "id": "C020",
+    "priority": "P1",
+    "title": "BOLA / IDOR",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S19:36-44; S39:97-110",
+    "assessment": "ID-based lookups are present. Router authorization does not prove object ownership; intended access policy and cross-user tests are missing.",
+    "evidence_full": "packages/core/core/src/core-api/controller/collection-type.ts:36-44; packages/plugins/users-permissions/server/src/controllers/user.js:97-110"
+  },
+  {
+    "id": "C021",
+    "priority": "P1",
+    "title": "Multi-tenant isolation",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S19:24-44; evidence/route-candidates.csv",
+    "assessment": "No target tenant model or tenant contract was supplied. Do not assume generic framework queries implement application tenant isolation.",
+    "evidence_full": "packages/core/core/src/core-api/controller/collection-type.ts:24-44; evidence/route-candidates.csv"
+  },
+  {
+    "id": "C022",
+    "priority": "P1",
+    "title": "Mass assignment / request binding",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S19:60-66,89-95; S39:137-141",
+    "assessment": "Core CRUD sanitizes input, but user update spreads request body. Role and sensitive-field restrictions require route/permission validation before declaring an exploit.",
+    "evidence_full": "packages/core/core/src/core-api/controller/collection-type.ts:60-66,89-95; packages/plugins/users-permissions/server/src/controllers/user.js:137-141"
+  },
+  {
+    "id": "C023",
+    "priority": "P1",
+    "title": "Function-level access control (BFLA)",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S18:85-92; S40:123-134",
+    "assessment": "Central authenticate/verify middleware exists, with explicit auth:false support. Every route and granted permission must be checked.",
+    "evidence_full": "packages/core/core/src/services/server/compose-endpoint.ts:85-92; packages/core/core/src/services/auth/index.ts:123-134"
+  },
+  {
+    "id": "C024",
+    "priority": "P2",
+    "title": "Property-level authorization (excessive data exposure)",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S19:29-30,42-44; S10:35-52",
+    "assessment": "Output sanitization and private password/token fields are observed. Per-role serializer coverage is not complete.",
+    "evidence_full": "packages/core/core/src/core-api/controller/collection-type.ts:29-30,42-44; packages/plugins/users-permissions/server/src/content-types/user/index.js:35-52"
+  },
+  {
+    "id": "C025",
+    "priority": "P2",
+    "title": "Privilege escalation paths",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S39:49-81,137-141",
+    "assessment": "User creation/update supports roles. Effective route permissions and elevated-actor checks must be tested; no privilege escalation is asserted.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/user.js:49-81,137-141"
+  },
+  {
+    "id": "C026",
+    "priority": "P2",
+    "title": "Authorization tests exist",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "evidence/packages.json; evidence/route-candidates.csv",
+    "assessment": "Repository tests exist, but no proof of an exhaustive role-by-endpoint and cross-tenant test matrix was obtained.",
+    "evidence_full": "evidence/packages.json; evidence/route-candidates.csv"
+  },
+  {
+    "id": "C027",
+    "priority": "P1",
+    "title": "Password and credential handling",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S01:7-10; S05:3-30; S06:16-20",
+    "assessment": "Known example SQL passwords and signing/encryption fallback values exist. F02 is source-remediated in listed configs; rotation and TLS remain operator tasks.",
+    "evidence_full": "docker-compose.dev.yml:7-10; examples/getstarted/config/admin.js:3-30; examples/getstarted/config/database.js:16-20"
+  },
+  {
+    "id": "C028",
+    "priority": "P1",
+    "title": "Account recovery and verification flows",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S09:288-299,503-537; S10:42-53",
+    "assessment": "Reset tokens had no stored expiry. F05 adds expiry and rejects legacy links, but atomic one-time consumption and confirmation expiry remain unresolved.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:288-299,503-537; packages/plugins/users-permissions/server/src/content-types/user/index.js:42-53"
+  },
+  {
+    "id": "C029",
+    "priority": "P1",
+    "title": "Session management",
+    "status": "Fail",
+    "severity": "Medium",
+    "evidence": "S23:14-29; S09:356-375",
+    "assessment": "Legacy mode uses long-lived stateless JWTs and has no logout endpoint. Refresh mode also swallowed revocation errors. F08/F09 need session migration and runtime replay tests.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/config.js:14-29; packages/plugins/users-permissions/server/src/controllers/auth.js:356-375"
+  },
+  {
+    "id": "C030",
+    "priority": "P2",
+    "title": "JWT implementation",
+    "status": "Fail",
+    "severity": "Medium",
+    "evidence": "S22:87-99; S23:14-22",
+    "assessment": "Algorithm is pinned, but legacy verification supplies no issuer/audience constraints and defaults to 30-day tokens. F09 remains; application claim policy is needed.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/services/jwt.js:87-99; packages/plugins/users-permissions/server/src/config.js:14-22"
+  },
+  {
+    "id": "C031",
+    "priority": "P2",
+    "title": "MFA implementation",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S09:136-200; evidence/route-candidates.csv",
+    "assessment": "No deployed MFA policy, enrollment or recovery configuration was supplied. Absence of a demonstrated MFA bypass is not a pass.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:136-200; evidence/route-candidates.csv"
+  },
+  {
+    "id": "C032",
+    "priority": "P2",
+    "title": "OAuth / OIDC / SSO",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S23:44-69; S09:434-470",
+    "assessment": "Callback URL checks exist. Provider state, nonce, PKCE and verified-email linking require provider-specific configuration and tests.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/config.js:44-69; packages/plugins/users-permissions/server/src/controllers/auth.js:434-470"
+  },
+  {
+    "id": "C033",
+    "priority": "P2",
+    "title": "CSRF defenses",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S29:43-69; S23:23-29",
+    "assessment": "Refresh cookies use SameSite defaults; the patch enables Apollo CSRF prevention. Cookie-based write and refresh endpoints still need cross-site testing.",
+    "evidence_full": "packages/core/admin/shared/utils/session-auth.ts:43-69; packages/plugins/users-permissions/server/src/config.js:23-29"
+  },
+  {
+    "id": "C034",
+    "priority": "P1",
+    "title": "Race conditions (TOCTOU)",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S09:288-299",
+    "assessment": "Reset-token read and password update remain separate operations. Two parallel requests may consume the same link. F05 remains partially fixed pending atomic consumption.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:288-299"
+  },
+  {
+    "id": "C035",
+    "priority": "P1",
+    "title": "Workflow step bypasses",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S09:181-195,665-701",
+    "assessment": "Confirmation/block state is checked during local login. No full onboarding/approval state-machine audit was completed.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:181-195,665-701"
+  },
+  {
+    "id": "C036",
+    "priority": "P1",
+    "title": "Numeric edge cases and financial logic",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "evidence/route-candidates.csv; S19:50-72",
+    "assessment": "No identified deployed financial workflow. App/plugin business requirements are needed before calling this not applicable.",
+    "evidence_full": "evidence/route-candidates.csv; packages/core/core/src/core-api/controller/collection-type.ts:50-72"
+  },
+  {
+    "id": "C037",
+    "priority": "P2",
+    "title": "Replay and idempotency",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S09:288-299; S28:114-131",
+    "assessment": "One-time token updates are non-atomic and outgoing webhooks lack receiver dedup context. Payment/inbound-event applicability is unknown.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:288-299; packages/core/core/src/services/webhook-runner.ts:114-131"
+  },
+  {
+    "id": "C038",
+    "priority": "P2",
+    "title": "Abuse of legitimate features",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S24:94-117; S43:19-97",
+    "assessment": "Auth rate-limit hooks exist. Search/export/invitation quotas and distributed behavior are not proven.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/middlewares/rateLimit.js:94-117; packages/plugins/users-permissions/server/src/routes/content-api/auth.js:19-97"
+  },
+  {
+    "id": "C039",
+    "priority": "P3",
+    "title": "Time-based logic",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S29:38-40; S09:288-299",
+    "assessment": "Lifespans are server-configured. Patch adds server-time reset expiry; DST/boundary/session clock tests are still required.",
+    "evidence_full": "packages/core/admin/shared/utils/session-auth.ts:38-40; packages/plugins/users-permissions/server/src/controllers/auth.js:288-299"
+  },
+  {
+    "id": "C040",
+    "priority": "P1",
+    "title": "Hardcoded credentials and secrets",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S05:3-30; S04:12-14; S01:7-10",
+    "assessment": "Fallback credentials exist. F02 removes those in listed configs. Pattern inventory omits secret values; git history was excluded and no full Gitleaks history scan occurred.",
+    "evidence_full": "examples/getstarted/config/admin.js:3-30; examples/getstarted/config/server.js:12-14; docker-compose.dev.yml:7-10"
+  },
+  {
+    "id": "C041",
+    "priority": "P1",
+    "title": "Password hashing",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S21:49-56,157",
+    "assessment": "bcrypt hashing defaults to cost 10; verification uses bcrypt.compare. Configurable costs, legacy hashes and password-length policy require validation.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/services/user.js:49-56,157"
+  },
+  {
+    "id": "C042",
+    "priority": "P1",
+    "title": "Symmetric encryption",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S11:10-32,47-51; S12:140",
+    "assessment": "Export encryption defaults to AES-128-ECB with fixed empty KDF salt; CBC options derive IV from the key. F06 remains; changing format requires coordinated import/export migration.",
+    "evidence_full": "packages/core/data-transfer/src/utils/encryption/encrypt.ts:10-32,47-51; packages/core/data-transfer/src/file/providers/destination/index.ts:140"
+  },
+  {
+    "id": "C043",
+    "priority": "P2",
+    "title": "Randomness",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S09:503; S37:26",
+    "assessment": "Reset tokens and GCM IVs use crypto.randomBytes. Other random values were not comprehensively classified by security purpose.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:503; packages/core/admin/server/src/services/encryption.ts:26"
+  },
+  {
+    "id": "C044",
+    "priority": "P2",
+    "title": "Signature and MAC verification",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S38:45; S22:91-99",
+    "assessment": "An audit-log export token uses constant-time comparison; JWT library performs verification. Every signature path has not been verified.",
+    "evidence_full": "packages/core/admin/ee/server/src/audit-logs/utils/export-token.ts:45; packages/plugins/users-permissions/server/src/services/jwt.js:91-99"
+  },
+  {
+    "id": "C045",
+    "priority": "P2",
+    "title": "TLS usage in outbound calls",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S08:145-149; S28:117-131",
+    "assessment": "Fetch relies on platform TLS checks. Custom proxy/provider trust stores and environment-level overrides need deployment review.",
+    "evidence_full": "packages/core/upload/server/src/services/file.ts:145-149; packages/core/core/src/services/webhook-runner.ts:117-131"
+  },
+  {
+    "id": "C046",
+    "priority": "P3",
+    "title": "Key management",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S37:7-15; S05:29-30",
+    "assessment": "Admin encryption key is configured via environment; fallback removed. No KMS, cross-environment isolation or rotation plan was supplied.",
+    "evidence_full": "packages/core/admin/server/src/services/encryption.ts:7-15; examples/getstarted/config/admin.js:29-30"
+  },
+  {
+    "id": "C047",
+    "priority": "P1",
+    "title": "Fail-closed behavior",
+    "status": "Fail",
+    "severity": "Medium",
+    "evidence": "S09:372-390; S18:37-55",
+    "assessment": "Logout swallowed revoke exceptions and returned success. F08 now returns an error on exceptions; non-throwing failures and other fallback paths need review.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:372-390; packages/core/core/src/services/server/compose-endpoint.ts:37-55"
+  },
+  {
+    "id": "C048",
+    "priority": "P2",
+    "title": "Sensitive data in logs",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S08:126-159; S28:144-148",
+    "assessment": "URL-containing errors and fetch debug messages can expose user-influenced values. Central redaction and log-retention behavior need review.",
+    "evidence_full": "packages/core/upload/server/src/services/file.ts:126-159; packages/core/core/src/services/webhook-runner.ts:144-148"
+  },
+  {
+    "id": "C049",
+    "priority": "P2",
+    "title": "Security event logging",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S05:21-23; S18:42-54",
+    "assessment": "Audit-log capability and denial responses exist. Actual enabled logging, SIEM forwarding, alerts and request IDs are not verified.",
+    "evidence_full": "examples/getstarted/config/admin.js:21-23; packages/core/core/src/services/server/compose-endpoint.ts:42-54"
+  },
+  {
+    "id": "C050",
+    "priority": "P2",
+    "title": "Debug and default configuration",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S04:30-48; S05:3-30; S34:9-10,37",
+    "assessment": "Examples enable verbose logs/MCP and carry weak secrets; helper server bound broadly. F01/F02 harden bindings/secrets, but example debug features remain review-required.",
+    "evidence_full": "examples/getstarted/config/server.js:30-48; examples/getstarted/config/admin.js:3-30; scripts/open-api/serve.js:9-10,37"
+  },
+  {
+    "id": "C051",
+    "priority": "P2",
+    "title": "Input validation strategy",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S19:25-26,60-62; S20:121-123",
+    "assessment": "Boundary validation exists in core CRUD. Duplicate-key behavior, every custom route and body-size settings need verification.",
+    "evidence_full": "packages/core/core/src/core-api/controller/collection-type.ts:25-26,60-62; packages/core/database/src/query/helpers/where.ts:121-123"
+  },
+  {
+    "id": "C052",
+    "priority": "P1",
+    "title": "Known-vulnerable dependencies",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S33; evidence/osv-results.json; evidence/osv-advisories.json",
+    "assessment": "OSV queried all 2,838 root lockfile package/version pairs; 44 pairs matched 111 unique advisory IDs. F10 is advisory evidence, not proof of deployed reachability.",
+    "evidence_full": "S33; evidence/osv-results.json; evidence/osv-advisories.json"
+  },
+  {
+    "id": "C053",
+    "priority": "P2",
+    "title": "Lockfiles, pinned versions, and integrity hashes",
+    "status": "Fail",
+    "severity": "Medium",
+    "evidence": "S01:5,17; S33:5-13",
+    "assessment": "Yarn lock has integrity checks, but Compose PostgreSQL tag was unpinned and MySQL only major-pinned. Patch requires operator-selected tested images/digests; other lockfiles not SCA-scanned.",
+    "evidence_full": "docker-compose.dev.yml:5,17; yarn.lock:5-13"
+  },
+  {
+    "id": "C054",
+    "priority": "P2",
+    "title": "Dangerous install scripts and unmaintained packages",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S32:59-62; evidence/packages.json",
+    "assessment": "Root postinstall runs husky. Install hooks were inventoried, not executed. Transitive install scripts and package maintenance require deeper review.",
+    "evidence_full": "package.json:59-62; evidence/packages.json"
+  },
+  {
+    "id": "C055",
+    "priority": "P1",
+    "title": "CORS policy",
+    "status": "Fail",
+    "severity": "High",
+    "evidence": "S07:16-22,64-70",
+    "assessment": "Baseline wildcard origin reflects request Origin with credentials enabled. F03 denies cross-origin by default; no running-browser verification was performed.",
+    "evidence_full": "packages/core/core/src/middlewares/cors.ts:16-22,64-70"
+  },
+  {
+    "id": "C056",
+    "priority": "P1",
+    "title": "TLS and HSTS",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S16:22-25",
+    "assessment": "HSTS middleware exists. No TLS endpoint, certificate chain, reverse proxy or HTTPS redirect was supplied.",
+    "evidence_full": "packages/core/core/src/middlewares/security.ts:22-25"
+  },
+  {
+    "id": "C057",
+    "priority": "P1",
+    "title": "HTTP security headers",
+    "status": "Fail",
+    "severity": "Medium",
+    "evidence": "S16:49-75,87-99",
+    "assessment": "Documentation/playground paths add unsafe-inline and broad script exceptions. F11 remains; nonce-compatible UI migration and deployed header checks are required.",
+    "evidence_full": "packages/core/core/src/middlewares/security.ts:49-75,87-99"
+  },
+  {
+    "id": "C058",
+    "priority": "P1",
+    "title": "Cookie attributes",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S29:43-69",
+    "assessment": "HttpOnly/SameSite cookie options exist; Secure depends on environment/proxy and overrides. All auth cookies were not checked on the wire.",
+    "evidence_full": "packages/core/admin/shared/utils/session-auth.ts:43-69"
+  },
+  {
+    "id": "C059",
+    "priority": "P2",
+    "title": "Caching of sensitive responses",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S27:31-75; S19:24-44",
+    "assessment": "No deployed cache/proxy behavior was available. Sensitive responses must be tested for Cache-Control:no-store.",
+    "evidence_full": "packages/core/core/src/services/errors.ts:31-75; packages/core/core/src/core-api/controller/collection-type.ts:24-44"
+  },
+  {
+    "id": "C060",
+    "priority": "P2",
+    "title": "Subdomain and DNS hygiene",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "No DNS/host inventory supplied; no source file/line can establish deployed DNS hygiene.",
+    "assessment": "Subdomain ownership, dangling CNAMEs and staging exposure require the approved host list.",
+    "evidence_full": "No DNS/host inventory supplied; no source file/line can establish deployed DNS hygiene."
+  },
+  {
+    "id": "C061",
+    "priority": "P3",
+    "title": "Content security reporting",
+    "status": "Not verified",
+    "severity": "Low",
+    "evidence": "S16:14-20",
+    "assessment": "No collected CSP-reporting infrastructure was supplied. Test reporting destinations and owners in deployment.",
+    "evidence_full": "packages/core/core/src/middlewares/security.ts:14-20"
+  },
+  {
+    "id": "C062",
+    "priority": "P1",
+    "title": "JWT runtime tests",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S22:87-99",
+    "assessment": "Static verification constrains algorithms. No token-tampering, foreign-audience or signature tests against a running app were conducted.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/services/jwt.js:87-99"
+  },
+  {
+    "id": "C063",
+    "priority": "P1",
+    "title": "Session revocation",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S09:356-390; regression-results.json",
+    "assessment": "Focused mocked logout error test passes after patch. Actual old access/refresh token replay after logout/password/role changes remains untested.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:356-390; regression-results.json"
+  },
+  {
+    "id": "C064",
+    "priority": "P1",
+    "title": "Rate limiting and anti-automation",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S24:62-117; S43:19-97",
+    "assessment": "Auth rate-limit hooks exist. No distributed-store, forwarded-IP spoofing or concurrent limit checks against a deployed service.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/middlewares/rateLimit.js:62-117; packages/plugins/users-permissions/server/src/routes/content-api/auth.js:19-97"
+  },
+  {
+    "id": "C065",
+    "priority": "P1",
+    "title": "Error suppression",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S27:64-75",
+    "assessment": "Generic internal-error formatting is observed. Malformed-body and exception tests on all public surfaces were not run.",
+    "evidence_full": "packages/core/core/src/services/errors.ts:64-75"
+  },
+  {
+    "id": "C066",
+    "priority": "P1",
+    "title": "Authorization runtime verification (BOLA/BFLA)",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S18:85-92; evidence/route-candidates.csv",
+    "assessment": "No two-user/two-tenant/admin test accounts or running app supplied. BOLA/BFLA runtime verification remains mandatory.",
+    "evidence_full": "packages/core/core/src/services/server/compose-endpoint.ts:85-92; evidence/route-candidates.csv"
+  },
+  {
+    "id": "C067",
+    "priority": "P2",
+    "title": "User enumeration",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S09:164-189,496-498",
+    "assessment": "Login errors are generic for absent/wrong credentials, but blocked/unconfirmed responses differ. Enumeration timing and registration behavior remain untested.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/controllers/auth.js:164-189,496-498"
+  },
+  {
+    "id": "C068",
+    "priority": "P2",
+    "title": "Password policy and MFA enforcement",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S10:35-40; S21:49-56",
+    "assessment": "Model minimum password length is six; deployment validation/MFA policy unknown. No live weak/breached-password tests were performed.",
+    "evidence_full": "packages/plugins/users-permissions/server/src/content-types/user/index.js:35-40; packages/plugins/users-permissions/server/src/services/user.js:49-56"
+  },
+  {
+    "id": "C069",
+    "priority": "P2",
+    "title": "Session handling in practice",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S29:38-40,73-95",
+    "assessment": "Configured session lifespans are visible. Fixation, concurrent sessions, idle expiry and actual cookie scope are not runtime-tested.",
+    "evidence_full": "packages/core/admin/shared/utils/session-auth.ts:38-40,73-95"
+  },
+  {
+    "id": "C070",
+    "priority": "P2",
+    "title": "CSRF runtime check",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S29:43-69; S14:199-220",
+    "assessment": "Browser cross-site JSON/multipart/refresh tests are deferred. SameSite or Apollo settings alone do not prove CSRF protection.",
+    "evidence_full": "packages/core/admin/shared/utils/session-auth.ts:43-69; packages/plugins/graphql/server/src/bootstrap.ts:199-220"
+  },
+  {
+    "id": "C071",
+    "priority": "P1",
+    "title": "SSRF and cloud metadata access",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S08:133-149",
+    "assessment": "Mocked tests cover blocked DNS answers and redirect:error. No cloud metadata/internal network/OOB probes were run; DNS-rebinding risk remains.",
+    "evidence_full": "packages/core/upload/server/src/services/file.ts:133-149"
+  },
+  {
+    "id": "C072",
+    "priority": "P2",
+    "title": "HTTP request smuggling and desync",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "No deployed proxy chain supplied; no source file/line proves parser agreement.",
+    "assessment": "Request-smuggling tests need front/back proxy topology and separately approved safe runtime testing.",
+    "evidence_full": "No deployed proxy chain supplied; no source file/line proves parser agreement."
+  },
+  {
+    "id": "C073",
+    "priority": "P2",
+    "title": "Host header and routing attacks",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S35:20-23; S09:509-511",
+    "assessment": "Reset URLs use configured base URLs. Forwarded-header trust, host routing and virtual-host isolation need deployment validation.",
+    "evidence_full": "packages/core/core/src/configuration/index.ts:20-23; packages/plugins/users-permissions/server/src/controllers/auth.js:509-511"
+  },
+  {
+    "id": "C074",
+    "priority": "P2",
+    "title": "Web cache poisoning and deception",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "No cache/CDN configuration supplied; source line evidence unavailable.",
+    "assessment": "Unkeyed-header poisoning and path-confusion behavior require the actual cache configuration.",
+    "evidence_full": "No cache/CDN configuration supplied; source line evidence unavailable."
+  },
+  {
+    "id": "C075",
+    "priority": "P1",
+    "title": "Inbound webhook verification",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S28:114-131; evidence/route-candidates.csv",
+    "assessment": "Observed runner is outgoing, not proof of inbound webhook validation. Installed inbound payment/provider integrations are unknown.",
+    "evidence_full": "packages/core/core/src/services/webhook-runner.ts:114-131; evidence/route-candidates.csv"
+  },
+  {
+    "id": "C076",
+    "priority": "P2",
+    "title": "WebSockets and server-sent events",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S13:4; evidence/route-candidates.csv",
+    "assessment": "GraphQL subscriptions default off. Other data-transfer/admin SSE/WebSocket authentication and origin checks need testing.",
+    "evidence_full": "packages/plugins/graphql/server/src/config/default-config.ts:4; evidence/route-candidates.csv"
+  },
+  {
+    "id": "C077",
+    "priority": "P3",
+    "title": "Exposed internal services",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S01:13-14,27-28; S34:37; S04:46-48",
+    "assessment": "Source exposed development services. Bind patches reduce default exposure; no public port scan or cloud firewall inspection occurred.",
+    "evidence_full": "docker-compose.dev.yml:13-14,27-28; scripts/open-api/serve.js:37; examples/getstarted/config/server.js:46-48"
+  },
+  {
+    "id": "C078",
+    "priority": "P1",
+    "title": "Disable introspection and suggestions in production",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S13:5-6; S14:199-225",
+    "assessment": "Patch disables production introspection by default. Suggestion suppression and real enabled-plugin behavior remain unverified.",
+    "evidence_full": "packages/plugins/graphql/server/src/config/default-config.ts:5-6; packages/plugins/graphql/server/src/bootstrap.ts:199-225"
+  },
+  {
+    "id": "C079",
+    "priority": "P1",
+    "title": "Query depth, complexity, and cost limits",
+    "status": "Fail",
+    "severity": "Medium",
+    "evidence": "S13:5; S14:149-158,203-206",
+    "assessment": "Baseline maxLimit:-1 and unset depth only trigger warnings. F07 sets finite depth/pagination; cost/alias amplification limits still need implementation.",
+    "evidence_full": "packages/plugins/graphql/server/src/config/default-config.ts:5; packages/plugins/graphql/server/src/bootstrap.ts:149-158,203-206"
+  },
+  {
+    "id": "C080",
+    "priority": "P1",
+    "title": "Batching and alias abuse",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S14:199-232; S43:19-97",
+    "assessment": "Patch explicitly disables HTTP batching. Alias-based amplification and per-operation rate accounting remain unresolved.",
+    "evidence_full": "packages/plugins/graphql/server/src/bootstrap.ts:199-232; packages/plugins/users-permissions/server/src/routes/content-api/auth.js:19-97"
+  },
+  {
+    "id": "C081",
+    "priority": "P1",
+    "title": "Field-level authorization",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S30:137-163",
+    "assessment": "Top-level and configured-field authorization exist; unconfigured nested fields do not automatically inherit object ownership. Cross-role/tenant queries need tests.",
+    "evidence_full": "packages/plugins/graphql/server/src/services/content-api/wrap-resolvers.ts:137-163"
+  },
+  {
+    "id": "C082",
+    "priority": "P2",
+    "title": "Persisted queries and input validation",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S14:136-138,203-206",
+    "assessment": "Typed schema generation exists. Persisted query allowlists and custom resolver input coverage were not supplied.",
+    "evidence_full": "packages/plugins/graphql/server/src/bootstrap.ts:136-138,203-206"
+  },
+  {
+    "id": "C083",
+    "priority": "P2",
+    "title": "API gateway controls",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S42:398-405; no gateway deployment configuration supplied",
+    "assessment": "Loopback defaults narrow direct access. Gateway-only reachability, quotas and consistent API version policy need actual topology.",
+    "evidence_full": "packages/core/core/src/Strapi.ts:398-405; no gateway deployment configuration supplied"
+  },
+  {
+    "id": "C084",
+    "priority": "P2",
+    "title": "Inventory and shadow APIs",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "evidence/route-candidates.csv; S18:76-95",
+    "assessment": "Partial source route inventory is delivered. Enabled dynamic endpoints, JS bundles and version ownership require runtime inventory.",
+    "evidence_full": "evidence/route-candidates.csv; packages/core/core/src/services/server/compose-endpoint.ts:76-95"
+  },
+  {
+    "id": "C085",
+    "priority": "P1",
+    "title": "Reflected, stored, and DOM XSS runtime tests",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S25:12-20; S26:67-74",
+    "assessment": "Static WYSIWYG sanitizer verified. No reflected/stored/DOM browser payload tests were executed.",
+    "evidence_full": "packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/PreviewWysiwyg.tsx:12-20; packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/sanitizer.ts:67-74"
+  },
+  {
+    "id": "C086",
+    "priority": "P2",
+    "title": "Clickjacking",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S16:26-28",
+    "assessment": "Sameorigin frameguard is configured; sensitive pages must be tested against required frame-ancestors policy.",
+    "evidence_full": "packages/core/core/src/middlewares/security.ts:26-28"
+  },
+  {
+    "id": "C087",
+    "priority": "P2",
+    "title": "Sensitive data in client storage and bundles",
+    "status": "Fail",
+    "severity": "Medium",
+    "evidence": "S15:131-156",
+    "assessment": "Admin remember-me mode writes access JWTs to localStorage. F09 remains; no public bundle/source-map inspection was possible.",
+    "evidence_full": "packages/core/admin/admin/src/utils/getFetchClient.ts:131-156"
+  },
+  {
+    "id": "C088",
+    "priority": "P2",
+    "title": "Third-party scripts",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S16:49-61",
+    "assessment": "Documentation/playground permits third-party CDN scripts. Actual SRI, deployed script inventory and integrity policy are unverified.",
+    "evidence_full": "packages/core/core/src/middlewares/security.ts:49-61"
+  },
+  {
+    "id": "C089",
+    "priority": "P3",
+    "title": "postMessage and cross-origin communication",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "evidence/source-pattern-inventory.json (browser_sinks)",
+    "assessment": "Preview postMessage locations are inventoried. Sender origin/receiver checks require targeted review and browser tests.",
+    "evidence_full": "evidence/source-pattern-inventory.json (browser_sinks)"
+  },
+  {
+    "id": "C090",
+    "priority": "P1",
+    "title": "Upload abuse tests",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S17:53-54,87-96; S36:271-287",
+    "assessment": "MIME detection and extension exceptions exist. No active SVG, polyglot, decompression or oversized upload tests were performed.",
+    "evidence_full": "packages/providers/upload-local/src/index.ts:53-54,87-96; packages/core/upload/server/src/utils/mime-validation.ts:271-287"
+  },
+  {
+    "id": "C091",
+    "priority": "P2",
+    "title": "Download and export features",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S08:288-310; S38:45",
+    "assessment": "Signed URL/token controls observed. Cross-user downloads, CSV formula injection and actual URL expiry remain untested.",
+    "evidence_full": "packages/core/upload/server/src/services/file.ts:288-310; packages/core/admin/ee/server/src/audit-logs/utils/export-token.ts:45"
+  },
+  {
+    "id": "C092",
+    "priority": "P2",
+    "title": "Document and image processors",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S36:234-244; evidence/packages.json",
+    "assessment": "Native image/file processing dependencies exist; sandbox, network isolation and resource budgets are deployment-dependent and untested.",
+    "evidence_full": "packages/core/upload/server/src/utils/mime-validation.ts:234-244; evidence/packages.json"
+  },
+  {
+    "id": "C093",
+    "priority": "P1",
+    "title": "Public cloud storage and backups",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "S17:53-54; no cloud/bucket/backup inventory supplied",
+    "assessment": "No public storage enumeration or web-root backup probes were run. Public directory uploads are not proof of bucket misconfiguration.",
+    "evidence_full": "packages/providers/upload-local/src/index.ts:53-54; no cloud/bucket/backup inventory supplied"
+  },
+  {
+    "id": "C094",
+    "priority": "P2",
+    "title": "Container and orchestrator exposure",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S01:1-28; S03:1-39",
+    "assessment": "Compose files were reviewed. Docker daemon/Kubernetes API/firewall exposure cannot be established from source.",
+    "evidence_full": "docker-compose.dev.yml:1-28; examples/complex/docker-compose.dev.yml:1-39"
+  },
+  {
+    "id": "C095",
+    "priority": "P2",
+    "title": "Default pages, versions, and verbose banners",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S34:27-38; S16:41-75",
+    "assessment": "Development documentation/example features are present. Deployed default pages and version banners are unknown.",
+    "evidence_full": "scripts/open-api/serve.js:27-38; packages/core/core/src/middlewares/security.ts:41-75"
+  },
+  {
+    "id": "C096",
+    "priority": "P3",
+    "title": "Denial-of-service resilience",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "S13:5; S14:149-158",
+    "assessment": "No load/DoS testing was authorized for remote systems or performed. Finite GraphQL defaults mitigate only some resource risks.",
+    "evidence_full": "packages/plugins/graphql/server/src/config/default-config.ts:5; packages/plugins/graphql/server/src/bootstrap.ts:149-158"
+  },
+  {
+    "id": "C097",
+    "priority": "P2",
+    "title": "Verify that attacks are detected",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "No SIEM/WAF access or detection logs supplied; source-line evidence unavailable.",
+    "assessment": "Representative attacks must be correlated to alerts with owners/runbooks in staging.",
+    "evidence_full": "No SIEM/WAF access or detection logs supplied; source-line evidence unavailable."
+  },
+  {
+    "id": "C098",
+    "priority": "P2",
+    "title": "WAF and bot controls tuned",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "No WAF/bot configuration supplied; source-line evidence unavailable.",
+    "assessment": "Blocking mode, false positives and independent application defenses require operational review.",
+    "evidence_full": "No WAF/bot configuration supplied; source-line evidence unavailable."
+  },
+  {
+    "id": "C099",
+    "priority": "P1",
+    "title": "Rate findings consistently",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "AppSec-Audit.pdf sections 3-4; findings.json",
+    "assessment": "Qualitative severity/rationale and proposed owning teams are included. Production business context and confirmed reachability are missing, so final CVSS scores are not assigned.",
+    "evidence_full": "AppSec-Audit.pdf sections 3-4; findings.json"
+  },
+  {
+    "id": "C100",
+    "priority": "P1",
+    "title": "Provide reproducible evidence and fixes",
+    "status": "Pass",
+    "severity": "Low",
+    "evidence": "findings.json; security-fixes.patch; change-manifest.json",
+    "assessment": "Each finding includes baseline file/line, code evidence, impact, fix or explicit open remediation, and verification scope.",
+    "evidence_full": "findings.json; security-fixes.patch; change-manifest.json"
+  },
+  {
+    "id": "C101",
+    "priority": "P1",
+    "title": "Fix root causes, not instances",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "security-fixes.patch; findings.json",
+    "assessment": "Repeated binding/secret defaults are patched across generators/configs. Architectural auth, SSRF, crypto and token-storage fixes remain open.",
+    "evidence_full": "security-fixes.patch; findings.json"
+  },
+  {
+    "id": "C102",
+    "priority": "P2",
+    "title": "Retest",
+    "status": "Not verified",
+    "severity": "High",
+    "evidence": "regression-results.json",
+    "assessment": "Nineteen focused mocked/source-level test groups pass and patch applicability is verified. Full build/typecheck and runtime retest remain undone.",
+    "evidence_full": "regression-results.json"
+  },
+  {
+    "id": "C103",
+    "priority": "P2",
+    "title": "Feed results back into the SDLC",
+    "status": "Not verified",
+    "severity": "Medium",
+    "evidence": "tests/security-regression.cjs; evidence/packages.json",
+    "assessment": "Regression harness and follow-up plan delivered. CI integration, policy tests and custom Semgrep/CodeQL rules remain operator work.",
+    "evidence_full": "tests/security-regression.cjs; evidence/packages.json"
+  },
+  {
+    "id": "C104",
+    "priority": "P3",
+    "title": "Track trends",
+    "status": "Not verified",
+    "severity": "Low",
+    "evidence": "findings.json; change-manifest.json",
+    "assessment": "A baseline exists. Historical remediation time, recurrence and full endpoint coverage metrics were not supplied.",
+    "evidence_full": "findings.json; change-manifest.json"
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "path": "docker-compose.dev.yml",
+    "original_sha256": "7f46649a7ee2bb23cd34b0198e1e8e8e182d2e9331bc63a6eb34c4403ed5de30",
+    "patched_sha256": "5a8b8cda58accd72e63b8eb1e36a1432478b5ab913cd3fd5127afa7d82e2c234"
+  },
+  {
+    "path": "docker-compose.test.yml",
+    "original_sha256": "0f57a3b790df6172473413580e20cc62793f34882ce56a6f69a64abfffdc0d7b",
+    "patched_sha256": "e5dc66ca4fa9b655666184be32c26ae99b483a5d4d7c9ccb72a43e4ac1d02189"
+  },
+  {
+    "path": "examples/complex/config/admin.ts",
+    "original_sha256": "5cc69f52c6058cd06991c08726dd0797ae412c4ca0f8c70e61527d9880cc4e75",
+    "patched_sha256": "3f512029c8a9edf61e7d9902c436d989caacf6634946799ee13f8676617e6f70"
+  },
+  {
+    "path": "examples/complex/config/database.ts",
+    "original_sha256": "a9e79962744b79557bce0b4f3d5af451d1ba228478f5cad391b54197ac24a880",
+    "patched_sha256": "fcbf0780741d7b5c676b12772ea85eec953ff7135edee4544a158ba535052c74"
+  },
+  {
+    "path": "examples/complex/config/server.ts",
+    "original_sha256": "d1dd98fc72246e4a6f4b4ab3906fb56b5b440193515295d0a8557610b8d3373c",
+    "patched_sha256": "893f5931c18060d3e4166e0aa93b8b5dc79224dc0d524fe8b32f1c02d6576621"
+  },
+  {
+    "path": "examples/complex/docker-compose.dev.yml",
+    "original_sha256": "1256459295f5bdb6af8d501351f0e9957f4c686ba440da7b3c463f58754ef222",
+    "patched_sha256": "4e73ab5356b0d467dfbaf8e4fbf08d1752affa2bad4a5f862e4cc3d4043c1c90"
+  },
+  {
+    "path": "examples/complex/scripts/setup-v4-project.ts",
+    "original_sha256": "6c7369f60e6a08dacdbc32d18be0ae6e89bb609da720fbab2a735993c33b84d1",
+    "patched_sha256": "723caa286749be2a5c361526f585d1f8a66b309bb6f06bdb9efa726ddbe0cfc6"
+  },
+  {
+    "path": "examples/complex/scripts/write-pinned-app-config.ts",
+    "original_sha256": "8df8250d4f23f69576d53e5cc7c8662e29ac379950516a7a7a81b8fe3c9a11f0",
+    "patched_sha256": "696e9aec1bb7cddeb07db8b779394937a2447b5f1dae74fff0d45f8dd7779be5"
+  },
+  {
+    "path": "examples/empty/.env.example",
+    "original_sha256": "5bfa233dc2142fc455e99a7ee5a71c04b565550799e9cdfad5cf0ae387cab6ac",
+    "patched_sha256": "d8a5c78fd874ea1fd40fd8ccbde7b58ade3f473d38c15333d9d27e2f7cb680ee"
+  },
+  {
+    "path": "examples/empty/config/admin.ts",
+    "original_sha256": "5cc69f52c6058cd06991c08726dd0797ae412c4ca0f8c70e61527d9880cc4e75",
+    "patched_sha256": "3f512029c8a9edf61e7d9902c436d989caacf6634946799ee13f8676617e6f70"
+  },
+  {
+    "path": "examples/empty/config/database.ts",
+    "original_sha256": "93f67ab42dc5db2dd1e1c131e4f5545cb60265aee3fe5802fc5ce196a94e262c",
+    "patched_sha256": "7ba4082eb0c8fb6d990d612cd87da0a00b7cfc1a7202ba9071f50e98f365b81b"
+  },
+  {
+    "path": "examples/empty/config/server.ts",
+    "original_sha256": "edb6f79c483e9ea0f272452ce8fdfc248c1aa8f0a412437d624e897b371ac167",
+    "patched_sha256": "31f7dc7575037209332b09628285b971c2319a88478fef507c15eaf3d2e66843"
+  },
+  {
+    "path": "examples/getstarted/config/admin.js",
+    "original_sha256": "5190c1f9f5f767353e474e27056b43c5279326e4b6e12733dc0eb0ea4a05174e",
+    "patched_sha256": "ee50f277adde9527436863665ab821bc5c27ef5c26d175fd6e96821b1b51926a"
+  },
+  {
+    "path": "examples/getstarted/config/database.js",
+    "original_sha256": "560f567601c3a55e0113241bd6a0325ad9a78dcde19faa43620e9e55cea74984",
+    "patched_sha256": "a9d3cbf1103c9d3ab62753dab6c3a0d171aa0f1fda6346fbc1cefab8671ac79c"
+  },
+  {
+    "path": "examples/getstarted/config/server.js",
+    "original_sha256": "8eff361e8906b6786d8c1d1cc920840455abeef1b2d018fe6e9011f2a776317a",
+    "patched_sha256": "d4bec964a67be417a092034d7a03c38b89e7cce25e85f9d1d44349f466f3350e"
+  },
+  {
+    "path": "examples/kitchensink-ts/config/admin.ts",
+    "original_sha256": "f1f173a88004c57d9dd33d467ad43fe53de69ed9f846abf45b7822b60010967b",
+    "patched_sha256": "321e8b6619c64757d19b5d000499e4461a3f316bd2d2672935c50c02c2a05050"
+  },
+  {
+    "path": "examples/kitchensink-ts/config/server.ts",
+    "original_sha256": "edb6f79c483e9ea0f272452ce8fdfc248c1aa8f0a412437d624e897b371ac167",
+    "patched_sha256": "31f7dc7575037209332b09628285b971c2319a88478fef507c15eaf3d2e66843"
+  },
+  {
+    "path": "examples/kitchensink/.env.example",
+    "original_sha256": "b1f006dfce5b18b9e2192823d3e64e27ccdb82ea926c9f4f2d4e4343d9f8bb0e",
+    "patched_sha256": "dcf4abb796e4b9722770cedc9e8a1a3d01845c6516c35f5b09e7cc5d4be77740"
+  },
+  {
+    "path": "examples/kitchensink/config/admin.js",
+    "original_sha256": "e4d4ed12e5feb27283c6ad8574afc04d5b88c8fd8aa08d4e1c29a2eaedf7cb1c",
+    "patched_sha256": "da427c1c82ec28b31203284f17d8a82f3c8cb0b57a386fda6234554b153fffe2"
+  },
+  {
+    "path": "examples/kitchensink/config/server.js",
+    "original_sha256": "d18d0a92d77cf49e1537fa1749bc2ee0889617e09e341d521fabcd2b31db3eea",
+    "patched_sha256": "d83e1f64990c4f8754edf6226a2c631d2095c44eaef5031f34feae2d88373b07"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/src/utils/dot-env.ts",
+    "original_sha256": "e9e562a7106bc535343638bbe9266203d23956b800d4d2dba9df07b8fc432c82",
+    "patched_sha256": "fc057fb32696d38d2898fb5f1f59b1b8acb2f9c24cc8c3b36b045ded496d7986"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/example-js/config/database.js",
+    "original_sha256": "a1d0200cd9c65322bb9c1b97cd2a4a796042b629dfb70e89794cb0d6bfe89720",
+    "patched_sha256": "5bf3d8932e1c446a86fac0c1ec9205fbca22375ab57c9e75ea2efde2a9bec433"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/example-js/config/server.js",
+    "original_sha256": "a950401849b70444f129f5f04fc3b7f59169a65641dd297cfe315088c23aadd1",
+    "patched_sha256": "866b337415dacd3294a80248103f7257c9c23de431c70e00aac31de77973bc2a"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/example/config/database.ts",
+    "original_sha256": "93f67ab42dc5db2dd1e1c131e4f5545cb60265aee3fe5802fc5ce196a94e262c",
+    "patched_sha256": "7ba4082eb0c8fb6d990d612cd87da0a00b7cfc1a7202ba9071f50e98f365b81b"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/example/config/server.ts",
+    "original_sha256": "37f81db96b9bda67417e2bf4160d4fe40a32401a42861c2860ea811870c06ad8",
+    "patched_sha256": "19346e5fc1a4d255af7d26cbd51f7f80bd6ac2e8cc96847f856bb481ab43c965"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/vanilla-js/config/database.js",
+    "original_sha256": "a1d0200cd9c65322bb9c1b97cd2a4a796042b629dfb70e89794cb0d6bfe89720",
+    "patched_sha256": "5bf3d8932e1c446a86fac0c1ec9205fbca22375ab57c9e75ea2efde2a9bec433"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/vanilla-js/config/server.js",
+    "original_sha256": "a950401849b70444f129f5f04fc3b7f59169a65641dd297cfe315088c23aadd1",
+    "patched_sha256": "866b337415dacd3294a80248103f7257c9c23de431c70e00aac31de77973bc2a"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/vanilla/config/database.ts",
+    "original_sha256": "93f67ab42dc5db2dd1e1c131e4f5545cb60265aee3fe5802fc5ce196a94e262c",
+    "patched_sha256": "7ba4082eb0c8fb6d990d612cd87da0a00b7cfc1a7202ba9071f50e98f365b81b"
+  },
+  {
+    "path": "packages/cli/create-strapi-app/templates/vanilla/config/server.ts",
+    "original_sha256": "37f81db96b9bda67417e2bf4160d4fe40a32401a42861c2860ea811870c06ad8",
+    "patched_sha256": "19346e5fc1a4d255af7d26cbd51f7f80bd6ac2e8cc96847f856bb481ab43c965"
+  },
+  {
+    "path": "packages/core/core/src/Strapi.ts",
+    "original_sha256": "92d4d161ddcd1e27144490ab0d38d15821735b58a9770c83689166c4a3d0f6ae",
+    "patched_sha256": "b0e3a8640965a627b035801e2df991657a8fb7928f98b05ac4a465230a365a59"
+  },
+  {
+    "path": "packages/core/core/src/configuration/index.ts",
+    "original_sha256": "723911e6eb001130982a038a4d7ec59d3c0f1c71b66691692077854152fda256",
+    "patched_sha256": "6325569668d1bec67ebea7381061b769d21a1ddf35a5549e122883a6cf050026"
+  },
+  {
+    "path": "packages/core/core/src/middlewares/cors.ts",
+    "original_sha256": "e633e5b0051286036d2930751b349f7c4ae668339c44c411cd0da868e3e0a66c",
+    "patched_sha256": "1b0fe70a7ee02a9d45d3f7a08e07335f70e2735d1a8ae9a924b0c79080141801"
+  },
+  {
+    "path": "packages/core/upload/server/src/services/file.ts",
+    "original_sha256": "88ecbabf4db75da3fbbbbb14fbc7a4ec11bc9df70af9e4d13063d7c14265d107",
+    "patched_sha256": "fa197be742d44bdd7abc38fdd02a75fd491b9df74cd90f1616e8897489fbfd73"
+  },
+  {
+    "path": "packages/plugins/graphql/server/src/config/default-config.ts",
+    "original_sha256": "66c8859cdaac2bf6340b6402122db882cb3611fe8c5d1118c5fffe36063f1a16",
+    "patched_sha256": "2abfcb93535b5563f5ca9f17ce8c19a3213f6ee70334ba3b0c35829df6f2cb13"
+  },
+  {
+    "path": "packages/plugins/users-permissions/server/src/content-types/user/index.js",
+    "original_sha256": "055cebde828d341e7ba17af7f4f258de80f9dcd25edceceb344a9b0389fe12fb",
+    "patched_sha256": "18491777e7a9d218c645e3df76f85a6d993f13726b928feb0d58dd3aaaf4b0c6"
+  },
+  {
+    "path": "packages/plugins/users-permissions/server/src/controllers/auth.js",
+    "original_sha256": "e6d8088e129d9642c83f2a40e24ec045453fa87f8a994f62a793306be8a962cc",
+    "patched_sha256": "75f7d78442ec90ebc23a4b6188c6037b92bcef67e4cd5ea1639f79c453a25490"
+  },
+  {
+    "path": "scripts/open-api/serve.js",
+    "original_sha256": "831effb7b11df30b248c0cb0f4353c10de731f8aa366720de6b44deeac8482e9",
+    "patched_sha256": "46fba0957e96d70f55ac8354244b0a5bf715226d0a07d463ff9bbbc921b271fb"
+  },
+  {
+    "path": "templates/website/config/database.ts",
+    "original_sha256": "93f67ab42dc5db2dd1e1c131e4f5545cb60265aee3fe5802fc5ce196a94e262c",
+    "patched_sha256": "7ba4082eb0c8fb6d990d612cd87da0a00b7cfc1a7202ba9071f50e98f365b81b"
+  },
+  {
+    "path": "templates/website/config/server.ts",
+    "original_sha256": "435f78f76ffa55d3784fa7422795487b230a707496c50a667d3112d52c60e20d",
+    "patched_sha256": "8276b7649855e1add6d2fd4cf6cd449336a75f6563e116a552df0b3bc35ca821"
+  }
+]

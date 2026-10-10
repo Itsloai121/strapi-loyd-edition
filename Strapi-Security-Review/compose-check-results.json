@@ -1,0 +1,17 @@
+{
+  "scope": "Static YAML/interpolation policy checks, not docker compose execution or network verification",
+  "tests": [
+    {
+      "name": "docker-compose.dev.yml",
+      "status": "Pass"
+    },
+    {
+      "name": "docker-compose.test.yml",
+      "status": "Pass"
+    },
+    {
+      "name": "examples/complex/docker-compose.dev.yml",
+      "status": "Pass"
+    }
+  ]
+}

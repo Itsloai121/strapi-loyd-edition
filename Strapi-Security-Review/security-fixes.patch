@@ -1,0 +1,1023 @@
+--- a/docker-compose.dev.yml
++++ b/docker-compose.dev.yml
+@@ -2,30 +2,29 @@
+ 
+ services:
+   postgres:
+-    image: postgres
++    image: ${POSTGRES_IMAGE:?Set a tested pinned PostgreSQL image or digest}
+     restart: always
+     volumes:
+       - pgdata:/var/lib/postgresql
+     environment:
+       POSTGRES_USER: strapi
+-      POSTGRES_PASSWORD: strapi
++      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a unique database password}
+       POSTGRES_DB: strapi
+     ports:
+-      - '5432:5432'
++      - '${DATABASE_BIND_ADDRESS:-127.0.0.1}:${POSTGRES_PORT:-5432}:5432'
+ 
+   mysql:
+-    image: mysql:8
++    image: ${MYSQL_IMAGE:?Set a tested pinned MySQL image or digest}
+     restart: always
+     environment:
+       MYSQL_DATABASE: strapi
+       MYSQL_USER: strapi
+-      MYSQL_PASSWORD: strapi
+-      MYSQL_ROOT_HOST: '%'
+-      MYSQL_ROOT_PASSWORD: strapi
++      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set a unique database password}
++      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set a unique database password}
+     volumes:
+       - mysqldata:/var/lib/mysql
+     ports:
+-      - '3306:3306'
++      - '${DATABASE_BIND_ADDRESS:-127.0.0.1}:${MYSQL_PORT:-3306}:3306'
+ 
+ volumes:
+   pgdata:
+--- a/docker-compose.test.yml
++++ b/docker-compose.test.yml
+@@ -1,12 +1,12 @@
+ services:
+   postgres:
+-    image: postgres
++    image: ${POSTGRES_IMAGE:?Set a tested pinned PostgreSQL image or digest}
+     restart: always
+     volumes:
+       - pgdata_test:/var/lib/postgresql
+     environment:
+       POSTGRES_USER: strapi
+-      POSTGRES_PASSWORD: strapi
++      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a unique database password}
+       POSTGRES_DB: strapi_test
+     healthcheck:
+       test: ['CMD-SHELL', 'pg_isready']
+@@ -14,17 +14,16 @@
+       timeout: 5s
+       retries: 5
+     ports:
+-      - '5432:5432'
++      - '${DATABASE_BIND_ADDRESS:-127.0.0.1}:${POSTGRES_PORT:-5432}:5432'
+ 
+   mysql:
+-    image: mysql:8
++    image: ${MYSQL_IMAGE:?Set a tested pinned MySQL image or digest}
+     restart: always
+     environment:
+       MYSQL_DATABASE: strapi_test
+       MYSQL_USER: strapi
+-      MYSQL_PASSWORD: strapi
+-      MYSQL_ROOT_HOST: '%'
+-      MYSQL_ROOT_PASSWORD: strapi
++      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set a unique database password}
++      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set a unique database password}
+     volumes:
+       - mysqldata_test:/var/lib/mysql
+     healthcheck:
+@@ -33,7 +32,7 @@
+       timeout: 5s
+       retries: 3
+     ports:
+-      - '3306:3306'
++      - '${DATABASE_BIND_ADDRESS:-127.0.0.1}:${MYSQL_PORT:-3306}:3306'
+ 
+ volumes:
+   pgdata_test:
+--- a/examples/complex/config/admin.ts
++++ b/examples/complex/config/admin.ts
+@@ -2,17 +2,17 @@
+ 
+ const adminConfig = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => ({
+   auth: {
+-    secret: env('ADMIN_JWT_SECRET', 'example-token'),
++    secret: (() => { const value = env('ADMIN_JWT_SECRET'); if (typeof value !== 'string' || value.length < 32) throw new Error('ADMIN_JWT_SECRET must contain at least 32 characters'); return value; })(),
+   },
+   apiToken: {
+-    salt: env('API_TOKEN_SALT', 'example-salt'),
++    salt: (() => { const value = env('API_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('API_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+   },
+   secrets: {
+-    encryptionKey: env('ENCRYPTION_KEY', 'example-key'),
++    encryptionKey: (() => { const value = env('ENCRYPTION_KEY'); if (typeof value !== 'string' || value.length < 32) throw new Error('ENCRYPTION_KEY must contain at least 32 characters'); return value; })(),
+   },
+   transfer: {
+     token: {
+-      salt: env('TRANSFER_TOKEN_SALT', 'example-salt'),
++      salt: (() => { const value = env('TRANSFER_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('TRANSFER_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+     },
+   },
+   flags: {
+--- a/examples/complex/config/database.ts
++++ b/examples/complex/config/database.ts
+@@ -19,7 +19,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -39,7 +39,7 @@
+         port: env.int('DATABASE_PORT', 5432),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -67,6 +67,8 @@
+     },
+   };
+ 
++  if (client !== 'sqlite' && !env('DATABASE_PASSWORD') && !(client === 'postgres' && env('DATABASE_URL'))) throw new Error('DATABASE_PASSWORD or a PostgreSQL DATABASE_URL is required');
++
+   return {
+     connection: {
+       ...connections[client],
+--- a/examples/complex/config/server.ts
++++ b/examples/complex/config/server.ts
+@@ -1,10 +1,10 @@
+ import type { Core } from '@strapi/strapi';
+ 
+ const serverConfig = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+-    keys: env.array('APP_KEYS', ['toBeModified1', 'toBeModified2']),
++    keys: (() => { const keys = env.array('APP_KEYS', []); if (keys.length < 2 || keys.some((key: string) => typeof key !== 'string' || key.length < 32)) throw new Error('APP_KEYS requires at least two independent 32-character keys'); return keys; })(),
+   },
+   transfer: {
+     remote: {
+--- a/examples/complex/docker-compose.dev.yml
++++ b/examples/complex/docker-compose.dev.yml
+@@ -1,42 +1,41 @@
+ services:
+   postgres:
+-    image: postgres:16
++    image: ${POSTGRES_IMAGE:?Set a tested pinned PostgreSQL image or digest}
+     restart: always
+     volumes:
+       - pgdata:/var/lib/postgresql/data
+     environment:
+       POSTGRES_USER: strapi
+-      POSTGRES_PASSWORD: strapi
++      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a unique database password}
+       POSTGRES_DB: strapi
+     ports:
+-      - '${POSTGRES_PORT:-5432}:5432'
++      - '${DATABASE_BIND_ADDRESS:-127.0.0.1}:${POSTGRES_PORT:-5432}:5432'
+ 
+   mysql:
+-    image: mysql:8
++    image: ${MYSQL_IMAGE:?Set a tested pinned MySQL image or digest}
+     restart: always
+     environment:
+       MYSQL_DATABASE: strapi
+       MYSQL_USER: strapi
+-      MYSQL_PASSWORD: strapi
+-      MYSQL_ROOT_HOST: '%'
+-      MYSQL_ROOT_PASSWORD: strapi
++      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set a unique database password}
++      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set a unique database password}
+     volumes:
+       - mysqldata:/var/lib/mysql
+     ports:
+-      - '${MYSQL_PORT:-3306}:3306'
++      - '${DATABASE_BIND_ADDRESS:-127.0.0.1}:${MYSQL_PORT:-3306}:3306'
+ 
+   mariadb:
+-    image: mariadb:11
++    image: ${MARIADB_IMAGE:?Set a tested pinned MariaDB image or digest}
+     restart: always
+     environment:
+       MARIADB_DATABASE: strapi
+       MARIADB_USER: strapi
+-      MARIADB_PASSWORD: strapi
+-      MARIADB_ROOT_PASSWORD: strapi
++      MARIADB_PASSWORD: ${MARIADB_PASSWORD:?Set a unique database password}
++      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:?Set a unique database password}
+     volumes:
+       - mariadbdata:/var/lib/mysql
+     ports:
+-      - '${MARIADB_PORT:-3307}:3306'
++      - '${DATABASE_BIND_ADDRESS:-127.0.0.1}:${MARIADB_PORT:-3307}:3306'
+ 
+ volumes:
+   pgdata:
+--- a/examples/complex/scripts/setup-v4-project.ts
++++ b/examples/complex/scripts/setup-v4-project.ts
+@@ -162,7 +162,7 @@
+           port: env.int('DATABASE_PORT', 5432),
+           database: env('DATABASE_NAME', 'strapi'),
+           user: env('DATABASE_USERNAME', 'strapi'),
+-          password: env('DATABASE_PASSWORD', 'strapi'),
++          password: env('DATABASE_PASSWORD'),
+           ssl: env.bool('DATABASE_SSL', false)
+             ? { rejectUnauthorized: false }
+             : false,
+@@ -180,7 +180,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) || undefined,
+       },
+     },
+@@ -210,7 +210,7 @@
+ const serverConfig = `'use strict';
+ 
+ module.exports = ({ env }) => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+     keys: env.array('APP_KEYS'),
+@@ -505,7 +505,7 @@
+ fs.writeFileSync(path.join(V4_PROJECT_DIR, '.gitignore'), gitignore);
+ 
+ // Create .env.example
+-const envExample = `HOST=0.0.0.0
++const envExample = `HOST=127.0.0.1
+ PORT=1337
+ APP_KEYS=toBeModified1,toBeModified2,toBeModified3,toBeModified4
+ API_TOKEN_SALT=toBeModified
+--- a/examples/complex/scripts/write-pinned-app-config.ts
++++ b/examples/complex/scripts/write-pinned-app-config.ts
+@@ -26,7 +26,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -46,7 +46,7 @@
+         port: env.int('DATABASE_PORT', 5432),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -77,6 +77,8 @@
+     );
+   }
+ 
++  if (client !== 'sqlite' && !env('DATABASE_PASSWORD') && !(client === 'postgres' && env('DATABASE_URL'))) throw new Error('DATABASE_PASSWORD or a PostgreSQL DATABASE_URL is required');
++
+   return {
+     connection: {
+       ...connections[client],
+@@ -87,10 +89,10 @@
+ `,
+ 
+   'server.ts': `export default ({ env }) => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+-    keys: env.array('APP_KEYS', ['toBeModified1', 'toBeModified2']),
++    keys: (() => { const keys = env.array('APP_KEYS', []); if (keys.length < 2 || keys.some((key: string) => typeof key !== 'string' || key.length < 32)) throw new Error('APP_KEYS requires at least two independent 32-character keys'); return keys; })(),
+   },
+   transfer: {
+     remote: {
+@@ -102,17 +104,17 @@
+ 
+   'admin.ts': `export default ({ env }) => ({
+   auth: {
+-    secret: env('ADMIN_JWT_SECRET', 'example-token'),
++    secret: (() => { const value = env('ADMIN_JWT_SECRET'); if (typeof value !== 'string' || value.length < 32) throw new Error('ADMIN_JWT_SECRET must contain at least 32 characters'); return value; })(),
+   },
+   apiToken: {
+-    salt: env('API_TOKEN_SALT', 'example-salt'),
++    salt: (() => { const value = env('API_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('API_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+   },
+   secrets: {
+-    encryptionKey: env('ENCRYPTION_KEY', 'example-key'),
++    encryptionKey: (() => { const value = env('ENCRYPTION_KEY'); if (typeof value !== 'string' || value.length < 32) throw new Error('ENCRYPTION_KEY must contain at least 32 characters'); return value; })(),
+   },
+   transfer: {
+     token: {
+-      salt: env('TRANSFER_TOKEN_SALT', 'example-salt'),
++      salt: (() => { const value = env('TRANSFER_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('TRANSFER_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+     },
+   },
+   flags: {
+--- a/examples/empty/.env.example
++++ b/examples/empty/.env.example
+@@ -1,4 +1,4 @@
+-HOST=0.0.0.0
++HOST=127.0.0.1
+ PORT=1337
+ APP_KEYS="toBeModified1,toBeModified2"
+ API_TOKEN_SALT=tobemodified
+--- a/examples/empty/config/admin.ts
++++ b/examples/empty/config/admin.ts
+@@ -2,17 +2,17 @@
+ 
+ const adminConfig = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => ({
+   auth: {
+-    secret: env('ADMIN_JWT_SECRET', 'example-token'),
++    secret: (() => { const value = env('ADMIN_JWT_SECRET'); if (typeof value !== 'string' || value.length < 32) throw new Error('ADMIN_JWT_SECRET must contain at least 32 characters'); return value; })(),
+   },
+   apiToken: {
+-    salt: env('API_TOKEN_SALT', 'example-salt'),
++    salt: (() => { const value = env('API_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('API_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+   },
+   secrets: {
+-    encryptionKey: env('ENCRYPTION_KEY', 'example-key'),
++    encryptionKey: (() => { const value = env('ENCRYPTION_KEY'); if (typeof value !== 'string' || value.length < 32) throw new Error('ENCRYPTION_KEY must contain at least 32 characters'); return value; })(),
+   },
+   transfer: {
+     token: {
+-      salt: env('TRANSFER_TOKEN_SALT', 'example-salt'),
++      salt: (() => { const value = env('TRANSFER_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('TRANSFER_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+     },
+   },
+   flags: {
+--- a/examples/empty/config/database.ts
++++ b/examples/empty/config/database.ts
+@@ -19,7 +19,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -39,7 +39,7 @@
+         port: env.int('DATABASE_PORT', 5432),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -61,6 +61,8 @@
+     },
+   };
+ 
++  if (client !== 'sqlite' && !env('DATABASE_PASSWORD') && !(client === 'postgres' && env('DATABASE_URL'))) throw new Error('DATABASE_PASSWORD or a PostgreSQL DATABASE_URL is required');
++
+   return {
+     connection: {
+       ...connections[client],
+--- a/examples/empty/config/server.ts
++++ b/examples/empty/config/server.ts
+@@ -1,10 +1,10 @@
+ import type { Core } from '@strapi/strapi';
+ 
+ const serverConfig = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+-    keys: env.array('APP_KEYS', ['toBeModified1', 'toBeModified2']),
++    keys: (() => { const keys = env.array('APP_KEYS', []); if (keys.length < 2 || keys.some((key: string) => typeof key !== 'string' || key.length < 32)) throw new Error('APP_KEYS requires at least two independent 32-character keys'); return keys; })(),
+   },
+ });
+ 
+--- a/examples/getstarted/config/admin.js
++++ b/examples/getstarted/config/admin.js
+@@ -1,7 +1,7 @@
+ module.exports = ({ env }) => ({
+   // autoOpen: false,
+   auth: {
+-    secret: env('ADMIN_JWT_SECRET', 'example-token'),
++    secret: (() => { const value = env('ADMIN_JWT_SECRET'); if (typeof value !== 'string' || value.length < 32) throw new Error('ADMIN_JWT_SECRET must contain at least 32 characters'); return value; })(),
+     sessions: {
+       options: {
+         //algorithm: env('ADMIN_JWT_ALGORITHM', 'HS256'),
+@@ -16,18 +16,18 @@
+     },
+   },
+   apiToken: {
+-    salt: env('API_TOKEN_SALT', 'example-salt'),
++    salt: (() => { const value = env('API_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('API_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+   },
+   auditLogs: {
+     enabled: env.bool('AUDIT_LOGS_ENABLED', true),
+   },
+   transfer: {
+     token: {
+-      salt: env('TRANSFER_TOKEN_SALT', 'example-salt'),
++      salt: (() => { const value = env('TRANSFER_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('TRANSFER_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+     },
+   },
+   secrets: {
+-    encryptionKey: env('ENCRYPTION_KEY', 'example-key'),
++    encryptionKey: (() => { const value = env('ENCRYPTION_KEY'); if (typeof value !== 'string' || value.length < 32) throw new Error('ENCRYPTION_KEY must contain at least 32 characters'); return value; })(),
+   },
+   flags: {
+     nps: env.bool('FLAG_NPS', true),
+--- a/examples/getstarted/config/database.js
++++ b/examples/getstarted/config/database.js
+@@ -1,57 +1,19 @@
+-/** @import { Core } from '@strapi/strapi' */
++'use strict';
+ 
+-/** @type {Core.Config.Database<'sqlite'>['connection']} */
+-const sqlite = {
+-  client: 'sqlite',
+-  connection: {
+-    filename: '.tmp/data.db',
+-  },
+-  useNullAsDefault: true,
++// Retain DB selection compatibility while avoiding checked-in SQL credentials.
++module.exports = ({ env }) => {
++  const client = env('DB', 'sqlite');
++  if (client === 'sqlite') {
++    return { connection: { client: 'sqlite', connection: { filename: env('DATABASE_FILENAME', '.tmp/data.db') }, useNullAsDefault: true } };
++  }
++  const defaults = { postgres: 5432, mysql: 3306, mariadb: 3307 };
++  if (!Object.prototype.hasOwnProperty.call(defaults, client)) throw new Error('Unsupported DB client');
++  const password = env('DATABASE_PASSWORD');
++  if (!password) throw new Error('DATABASE_PASSWORD is required for SQL databases');
++  const port = env.int('DATABASE_PORT', defaults[client]);
++  if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('DATABASE_PORT must be 1-65535');
++  return { connection: { client: client === 'mariadb' ? 'mysql' : client, connection: {
++    database: env('DATABASE_NAME', 'strapi'), user: env('DATABASE_USERNAME', 'strapi'), password,
++    port, host: env('DATABASE_HOST', '127.0.0.1'),
++  } } };
+ };
+-
+-/** @type {Core.Config.Database<'postgres'>['connection']} */
+-const postgres = {
+-  client: 'postgres',
+-  connection: {
+-    database: 'strapi',
+-    user: 'strapi',
+-    password: 'strapi',
+-    port: 5432,
+-    host: 'localhost',
+-  },
+-};
+-
+-/** @type {Core.Config.Database<'mysql'>['connection']} */
+-const mysql = {
+-  client: 'mysql',
+-  connection: {
+-    database: 'strapi',
+-    user: 'strapi',
+-    password: 'strapi',
+-    port: 3306,
+-    host: 'localhost',
+-  },
+-};
+-
+-/** @type {Core.Config.Database<'mysql'>['connection']} */
+-const mariadb = {
+-  client: 'mysql',
+-  connection: {
+-    database: 'strapi',
+-    user: 'strapi',
+-    password: 'strapi',
+-    port: 3307,
+-    host: 'localhost',
+-  },
+-};
+-
+-const db = {
+-  mysql,
+-  sqlite,
+-  postgres,
+-  mariadb,
+-};
+-
+-module.exports = {
+-  connection: process.env.DB ? db[process.env.DB] || db.sqlite : db.sqlite,
+-};
+--- a/examples/getstarted/config/server.js
++++ b/examples/getstarted/config/server.js
+@@ -3,14 +3,14 @@
+ const cronTasks = require('./src/cron-tasks');
+ 
+ module.exports = ({ env }) => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   cron: {
+     enabled: true,
+     tasks: cronTasks,
+   },
+   app: {
+-    keys: env.array('APP_KEYS', ['toBeModified1', 'toBeModified2']),
++    keys: (() => { const keys = env.array('APP_KEYS', []); if (keys.length < 2 || keys.some((key) => typeof key !== 'string' || key.length < 32)) throw new Error('APP_KEYS requires at least two independent 32-character keys'); return keys; })(),
+   },
+   webhooks: {
+     // TODO: V5, set to false by default
+--- a/examples/kitchensink-ts/config/admin.ts
++++ b/examples/kitchensink-ts/config/admin.ts
+@@ -2,14 +2,14 @@
+ 
+ const adminConfig = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => ({
+   auth: {
+-    secret: env('ADMIN_JWT_SECRET', 'example-token'),
++    secret: (() => { const value = env('ADMIN_JWT_SECRET'); if (typeof value !== 'string' || value.length < 32) throw new Error('ADMIN_JWT_SECRET must contain at least 32 characters'); return value; })(),
+   },
+   apiToken: {
+-    salt: env('API_TOKEN_SALT', 'example-salt'),
++    salt: (() => { const value = env('API_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('API_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+   },
+   transfer: {
+     token: {
+-      salt: env('TRANSFER_TOKEN_SALT', 'example-salt'),
++      salt: (() => { const value = env('TRANSFER_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('TRANSFER_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+     },
+   },
+   flags: {
+--- a/examples/kitchensink-ts/config/server.ts
++++ b/examples/kitchensink-ts/config/server.ts
+@@ -1,10 +1,10 @@
+ import type { Core } from '@strapi/strapi';
+ 
+ const serverConfig = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+-    keys: env.array('APP_KEYS', ['toBeModified1', 'toBeModified2']),
++    keys: (() => { const keys = env.array('APP_KEYS', []); if (keys.length < 2 || keys.some((key: string) => typeof key !== 'string' || key.length < 32)) throw new Error('APP_KEYS requires at least two independent 32-character keys'); return keys; })(),
+   },
+ });
+ 
+--- a/examples/kitchensink/.env.example
++++ b/examples/kitchensink/.env.example
+@@ -1,2 +1,2 @@
+-HOST=0.0.0.0
++HOST=127.0.0.1
+ PORT=1337
+--- a/examples/kitchensink/config/admin.js
++++ b/examples/kitchensink/config/admin.js
+@@ -1,14 +1,14 @@
+ module.exports = ({ env }) => ({
+   // autoOpen: false,
+   auth: {
+-    secret: env('ADMIN_JWT_SECRET', 'example-token'),
++    secret: (() => { const value = env('ADMIN_JWT_SECRET'); if (typeof value !== 'string' || value.length < 32) throw new Error('ADMIN_JWT_SECRET must contain at least 32 characters'); return value; })(),
+   },
+   apiToken: {
+-    salt: env('API_TOKEN_SALT', 'example-salt'),
++    salt: (() => { const value = env('API_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('API_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+   },
+   transfer: {
+     token: {
+-      salt: env('TRANSFER_TOKEN_SALT', 'example-salt'),
++      salt: (() => { const value = env('TRANSFER_TOKEN_SALT'); if (typeof value !== 'string' || value.length < 32) throw new Error('TRANSFER_TOKEN_SALT must contain at least 32 characters'); return value; })(),
+     },
+   },
+   flags: {
+--- a/examples/kitchensink/config/server.js
++++ b/examples/kitchensink/config/server.js
+@@ -1,7 +1,7 @@
+ module.exports = ({ env }) => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+-    keys: env.array('APP_KEYS', ['toBeModified1', 'toBeModified2']),
++    keys: (() => { const keys = env.array('APP_KEYS', []); if (keys.length < 2 || keys.some((key) => typeof key !== 'string' || key.length < 32)) throw new Error('APP_KEYS requires at least two independent 32-character keys'); return keys; })(),
+   },
+ });
+--- a/packages/cli/create-strapi-app/src/utils/dot-env.ts
++++ b/packages/cli/create-strapi-app/src/utils/dot-env.ts
+@@ -7,7 +7,7 @@
+ 
+ const envTmpl = `
+ # Server
+-HOST=0.0.0.0
++HOST=127.0.0.1
+ PORT=1337
+ 
+ # Secrets
+--- a/packages/cli/create-strapi-app/templates/example-js/config/database.js
++++ b/packages/cli/create-strapi-app/templates/example-js/config/database.js
+@@ -21,7 +21,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -41,7 +41,7 @@
+         port: env.int('DATABASE_PORT', 5432),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -63,6 +63,8 @@
+     },
+   };
+ 
++  if (client !== 'sqlite' && !env('DATABASE_PASSWORD') && !(client === 'postgres' && env('DATABASE_URL'))) throw new Error('DATABASE_PASSWORD or a PostgreSQL DATABASE_URL is required');
++
+   return {
+     connection: {
+       ...connections[client],
+--- a/packages/cli/create-strapi-app/templates/example-js/config/server.js
++++ b/packages/cli/create-strapi-app/templates/example-js/config/server.js
+@@ -1,5 +1,5 @@
+ module.exports = ({ env }) => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+     keys: env.array('APP_KEYS'),
+--- a/packages/cli/create-strapi-app/templates/example/config/database.ts
++++ b/packages/cli/create-strapi-app/templates/example/config/database.ts
+@@ -19,7 +19,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -39,7 +39,7 @@
+         port: env.int('DATABASE_PORT', 5432),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -61,6 +61,8 @@
+     },
+   };
+ 
++  if (client !== 'sqlite' && !env('DATABASE_PASSWORD') && !(client === 'postgres' && env('DATABASE_URL'))) throw new Error('DATABASE_PASSWORD or a PostgreSQL DATABASE_URL is required');
++
+   return {
+     connection: {
+       ...connections[client],
+--- a/packages/cli/create-strapi-app/templates/example/config/server.ts
++++ b/packages/cli/create-strapi-app/templates/example/config/server.ts
+@@ -1,7 +1,7 @@
+ import type { Core } from '@strapi/strapi';
+ 
+ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+     keys: env.array('APP_KEYS')!,
+--- a/packages/cli/create-strapi-app/templates/vanilla-js/config/database.js
++++ b/packages/cli/create-strapi-app/templates/vanilla-js/config/database.js
+@@ -21,7 +21,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -41,7 +41,7 @@
+         port: env.int('DATABASE_PORT', 5432),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -63,6 +63,8 @@
+     },
+   };
+ 
++  if (client !== 'sqlite' && !env('DATABASE_PASSWORD') && !(client === 'postgres' && env('DATABASE_URL'))) throw new Error('DATABASE_PASSWORD or a PostgreSQL DATABASE_URL is required');
++
+   return {
+     connection: {
+       ...connections[client],
+--- a/packages/cli/create-strapi-app/templates/vanilla-js/config/server.js
++++ b/packages/cli/create-strapi-app/templates/vanilla-js/config/server.js
+@@ -1,5 +1,5 @@
+ module.exports = ({ env }) => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+     keys: env.array('APP_KEYS'),
+--- a/packages/cli/create-strapi-app/templates/vanilla/config/database.ts
++++ b/packages/cli/create-strapi-app/templates/vanilla/config/database.ts
+@@ -19,7 +19,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -39,7 +39,7 @@
+         port: env.int('DATABASE_PORT', 5432),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -61,6 +61,8 @@
+     },
+   };
+ 
++  if (client !== 'sqlite' && !env('DATABASE_PASSWORD') && !(client === 'postgres' && env('DATABASE_URL'))) throw new Error('DATABASE_PASSWORD or a PostgreSQL DATABASE_URL is required');
++
+   return {
+     connection: {
+       ...connections[client],
+--- a/packages/cli/create-strapi-app/templates/vanilla/config/server.ts
++++ b/packages/cli/create-strapi-app/templates/vanilla/config/server.ts
+@@ -1,7 +1,7 @@
+ import type { Core } from '@strapi/strapi';
+ 
+ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+     keys: env.array('APP_KEYS')!,
+--- a/packages/core/core/src/Strapi.ts
++++ b/packages/core/core/src/Strapi.ts
+@@ -402,6 +402,12 @@
+       } else {
+         const { host, port } = this.config.get('server');
+ 
++        if (!Number.isInteger(port) || port < 1 || port > 65535) {
++          throw new Error('server.port must be an integer between 1 and 65535');
++        }
++        if (typeof host !== 'string' || !host.trim()) {
++          throw new Error('server.host must be explicitly configured');
++        }
+         this.server.listen(port, host, onListen);
+       }
+     });
+--- a/packages/core/core/src/configuration/index.ts
++++ b/packages/core/core/src/configuration/index.ts
+@@ -1,5 +1,4 @@
+ /* eslint-disable @typescript-eslint/no-var-requires */
+-import os from 'os';
+ import path from 'path';
+ import _, { omit } from 'lodash';
+ import dotenv from 'dotenv';
+@@ -18,8 +17,8 @@
+ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+ 
+ const defaultServerConfig = {
+-  host: process.env.HOST || os.hostname() || 'localhost',
+-  port: Number(process.env.PORT) || 1337,
++  host: process.env.HOST || '127.0.0.1',
++  port: process.env.PORT === undefined ? 1337 : Number(process.env.PORT),
+   proxy: false,
+   cron: { enabled: false },
+   dirs: { public: './public' },
+--- a/packages/core/core/src/middlewares/cors.ts
++++ b/packages/core/core/src/middlewares/cors.ts
+@@ -14,9 +14,9 @@
+ };
+ 
+ const defaults: Config = {
+-  origin: '*',
++  origin: [],
+   maxAge: 31536000,
+-  credentials: true,
++  credentials: false,
+   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
+   headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+   keepHeadersOnError: false,
+@@ -37,8 +37,8 @@
+     | ((ctx: any) => string | string[] | Promise<string | string[]>),
+   ctx?: any
+ ): Promise<string> => {
+-  if (!requestOrigin) {
+-    return '*';
++  if (!requestOrigin || requestOrigin === 'null') {
++    return '';
+   }
+ 
+   let originList: string | string[];
+@@ -54,8 +54,8 @@
+   if (Array.isArray(originList)) {
+     normalizedOrigins = originList;
+   } else if (originList === undefined || originList === null) {
+-    // Handle undefined/null - treat as wildcard
+-    normalizedOrigins = ['*'];
++    // Missing configuration is denied, never interpreted as a wildcard.
++    normalizedOrigins = [];
+   } else {
+     // Handle comma-separated string of origins
+     normalizedOrigins = originList.split(',').map((origin) => origin.trim());
+@@ -87,7 +87,12 @@
+   return koaCors({
+     async origin(ctx) {
+       const requestOrigin = ctx.get('Origin');
+-      return matchOrigin(requestOrigin, origin, ctx);
++      const resolvedOrigin = typeof origin === 'function' ? await origin(ctx) : origin;
++      const origins = Array.isArray(resolvedOrigin) ? resolvedOrigin : (resolvedOrigin ?? '').split(',').map((value) => value.trim());
++      if (credentials && origins.includes('*')) {
++        throw new Error('Credentialed CORS requires an explicit origin allowlist');
++      }
++      return matchOrigin(requestOrigin, resolvedOrigin, ctx);
+     },
+     exposeHeaders: expose,
+     maxAge,
+--- a/packages/core/upload/server/src/services/file.ts
++++ b/packages/core/upload/server/src/services/file.ts
+@@ -21,6 +21,12 @@
+ 
+ // Blocks loopback, link-local (cloud metadata), and RFC-1918 private ranges to prevent SSRF
+ const SSRF_BLOCK_LIST = new net.BlockList();
++SSRF_BLOCK_LIST.addSubnet('0.0.0.0', 8); // unspecified / current network
++SSRF_BLOCK_LIST.addSubnet('100.64.0.0', 10); // carrier-grade NAT
++SSRF_BLOCK_LIST.addSubnet('224.0.0.0', 4); // multicast
++SSRF_BLOCK_LIST.addSubnet('240.0.0.0', 4); // reserved
++SSRF_BLOCK_LIST.addSubnet('::', 128, 'ipv6'); // unspecified
++SSRF_BLOCK_LIST.addSubnet('ff00::', 8, 'ipv6'); // multicast
+ SSRF_BLOCK_LIST.addSubnet('127.0.0.0', 8); // loopback
+ SSRF_BLOCK_LIST.addSubnet('10.0.0.0', 8); // RFC-1918
+ SSRF_BLOCK_LIST.addSubnet('172.16.0.0', 12); // RFC-1918
+@@ -132,9 +138,8 @@
+ 
+   // Resolve hostname and block private/internal IP ranges to prevent SSRF
+   try {
+-    const { address, family } = await dns.lookup(parsedUrl.hostname);
+-    const type = family === 6 ? 'ipv6' : 'ipv4';
+-    if (SSRF_BLOCK_LIST.check(address, type)) {
++    const addresses = await dns.lookup(parsedUrl.hostname.replace(/^\[|\]$/g, ''), { all: true });
++    if (!addresses.length || addresses.some(({ address, family }) => SSRF_BLOCK_LIST.check(address, family === 6 ? 'ipv6' : 'ipv4'))) {
+       throw new ApplicationError(`URL resolves to a blocked address: ${url}`);
+     }
+   } catch (error) {
+@@ -146,7 +151,7 @@
+   const doFetch = typeof strapi?.fetch === 'function' ? strapi.fetch : fetch;
+   let response: Response;
+   try {
+-    response = await doFetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
++    response = await doFetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS), redirect: 'error' });
+   } catch (error) {
+     if (error instanceof Error && error.name === 'TimeoutError') {
+       throw new ApplicationError(`Request timed out while fetching URL: ${url}`);
+--- a/packages/plugins/graphql/server/src/config/default-config.ts
++++ b/packages/plugins/graphql/server/src/config/default-config.ts
+@@ -2,7 +2,13 @@
+   shadowCRUD: true,
+   endpoint: '/graphql',
+   subscriptions: false,
+-  maxLimit: -1,
+-  apolloServer: {},
++  defaultLimit: 25,
++  maxLimit: 100,
++  depthLimit: 10,
++  apolloServer: {
++    introspection: process.env.NODE_ENV !== 'production',
++    allowBatchedHttpRequests: false,
++    csrfPrevention: true,
++  },
+   v4CompatibilityMode: process.env.STRAPI_GRAPHQL_V4_COMPATIBILITY_MODE ?? false,
+ };
+--- a/packages/plugins/users-permissions/server/src/content-types/user/index.js
++++ b/packages/plugins/users-permissions/server/src/content-types/user/index.js
+@@ -45,6 +45,12 @@
+       private: true,
+       searchable: false,
+     },
++    resetPasswordTokenExpiresAt: {
++      type: 'datetime',
++      configurable: false,
++      private: true,
++      searchable: false,
++    },
+     confirmationToken: {
+       type: 'string',
+       configurable: false,
+--- a/packages/plugins/users-permissions/server/src/controllers/auth.js
++++ b/packages/plugins/users-permissions/server/src/controllers/auth.js
+@@ -289,12 +289,15 @@
+       .query('plugin::users-permissions.user')
+       .findOne({ where: { resetPasswordToken: code } });
+ 
+-    if (!user) {
++    if (!user || !user.resetPasswordTokenExpiresAt ||
++        !Number.isFinite(new Date(user.resetPasswordTokenExpiresAt).getTime()) ||
++        new Date(user.resetPasswordTokenExpiresAt).getTime() <= Date.now()) {
+       throw new ValidationError('Incorrect code provided');
+     }
+ 
+     await getService('user').edit(user.id, {
+       resetPasswordToken: null,
++      resetPasswordTokenExpiresAt: null,
+       password,
+     });
+ 
+@@ -373,6 +376,7 @@
+       await revokeLogoutSessions(strapi, ctx, userId, { scope, deviceId, body });
+     } catch (err) {
+       strapi.log.error('UP logout failed', err);
++      throw new ApplicationError('Logout could not be completed. Please retry.');
+     }
+ 
+     const requestHttpOnly = ctx.request.header['x-strapi-refresh-cookie'] === 'httpOnly';
+@@ -534,7 +538,12 @@
+     };
+ 
+     // NOTE: Update the user before sending the email so an Admin can generate the link if the email fails
+-    await getService('user').edit(user.id, { resetPasswordToken });
++    const lifespan = strapi.config.get('plugin::users-permissions.resetPasswordTokenLifespan', 900);
++    if (!Number.isInteger(lifespan) || lifespan < 1 || lifespan > 3600) {
++      throw new ApplicationError('resetPasswordTokenLifespan must be 1-3600 seconds');
++    }
++    const resetPasswordTokenExpiresAt = new Date(Date.now() + lifespan * 1000).toISOString();
++    await getService('user').edit(user.id, { resetPasswordToken, resetPasswordTokenExpiresAt });
+ 
+     // Send an email to the user.
+     await strapi.plugin('email').service('email').send(emailToSend);
+--- a/scripts/open-api/serve.js
++++ b/scripts/open-api/serve.js
+@@ -3,10 +3,10 @@
+ const http = require('http');
+ const path = require('path');
+ const fse = require('fs-extra');
+-const getPort = require('get-port');
+ 
+ const config = {
+-  port: parseInt(process.env.PORT, 10) || 1339,
++  host: process.env.OPENAPI_HOST || '127.0.0.1',
++  port: Number(process.env.OPENAPI_PORT ?? process.env.PORT ?? 1339),
+ };
+ 
+ const args = process.argv.slice(2);
+@@ -32,10 +32,11 @@
+     return fse.createReadStream(indexPagePath).pipe(res);
+   });
+ 
+-  const port = await getPort({ port: config.port });
++  const port = config.port;
++  if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('OPENAPI_PORT must be 1-65535');
+ 
+-  server.listen(port, () => {
+-    console.log(`Server available at http://localhost:${port}`);
++  server.listen(port, config.host, () => {
++    console.log(`Server available at http://${config.host}:${port}`);
+   });
+ }
+ 
+--- a/templates/website/config/database.ts
++++ b/templates/website/config/database.ts
+@@ -19,7 +19,7 @@
+         port: env.int('DATABASE_PORT', 3306),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -39,7 +39,7 @@
+         port: env.int('DATABASE_PORT', 5432),
+         database: env('DATABASE_NAME', 'strapi'),
+         user: env('DATABASE_USERNAME', 'strapi'),
+-        password: env('DATABASE_PASSWORD', 'strapi'),
++        password: env('DATABASE_PASSWORD'),
+         ssl: env.bool('DATABASE_SSL', false) && {
+           key: env('DATABASE_SSL_KEY', undefined),
+           cert: env('DATABASE_SSL_CERT', undefined),
+@@ -61,6 +61,8 @@
+     },
+   };
+ 
++  if (client !== 'sqlite' && !env('DATABASE_PASSWORD') && !(client === 'postgres' && env('DATABASE_URL'))) throw new Error('DATABASE_PASSWORD or a PostgreSQL DATABASE_URL is required');
++
+   return {
+     connection: {
+       ...connections[client],
+--- a/templates/website/config/server.ts
++++ b/templates/website/config/server.ts
+@@ -1,7 +1,7 @@
+ import type { Core } from '@strapi/strapi';
+ 
+ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server => ({
+-  host: env('HOST', '0.0.0.0'),
++  host: env('HOST', '127.0.0.1'),
+   port: env.int('PORT', 1337),
+   app: {
+     keys: env.array('APP_KEYS')!,

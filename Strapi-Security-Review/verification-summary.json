@@ -1,0 +1,19 @@
+{
+  "scope": "Offline source review with isolated boundary-mocked regression and static configuration checks only",
+  "changed_files": 39,
+  "checklist_entries": 104,
+  "focused_test_groups_passed": 19,
+  "static_compose_checks_passed": 3,
+  "patch_apply_check": "Pass",
+  "patch_applied_hash_match": "39/39",
+  "pdf_pages": 23,
+  "pdf_visual_review": "Every page inspected; no overflow/overlap observed",
+  "not_performed": [
+    "Full repository build/typecheck",
+    "Strapi integration/runtime tests",
+    "SQL schema migration/retest",
+    "Docker networking test",
+    "Live remote penetration tests"
+  ],
+  "port_policy": "Missing; no compliance assertion"
+}

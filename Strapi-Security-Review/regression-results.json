@@ -1,0 +1,81 @@
+{
+  "scope": "Isolated source-level regression tests with mocks. No deployed-app, Docker, database, or full type-check verification.",
+  "tests": [
+    {
+      "name": "CORS default denies untrusted origin and disables credentials",
+      "status": "Pass"
+    },
+    {
+      "name": "CORS exact allowlist preserves trusted credentialed clients",
+      "status": "Pass"
+    },
+    {
+      "name": "CORS refuses wildcard credentials including dynamic origins",
+      "status": "Pass"
+    },
+    {
+      "name": "CORS rejects null, absent and missing-config origins",
+      "status": "Pass"
+    },
+    {
+      "name": "Default SQLite requires no SQL password",
+      "status": "Pass"
+    },
+    {
+      "name": "SQL password required; configured host and port honored",
+      "status": "Pass"
+    },
+    {
+      "name": "SQL port bounds reject invalid values",
+      "status": "Pass"
+    },
+    {
+      "name": "Changed SQL templates permit SQLite and reject missing SQL passwords",
+      "status": "Pass"
+    },
+    {
+      "name": "Changed secret-bearing admin configs reject missing secrets",
+      "status": "Pass"
+    },
+    {
+      "name": "Changed server configs use loopback and require strong app keys",
+      "status": "Pass"
+    },
+    {
+      "name": "GraphQL production defaults bound depth and pagination; disable batching/introspection",
+      "status": "Pass"
+    },
+    {
+      "name": "URL import denies private, metadata, unspecified, CGNAT and mapped IPv4 destinations",
+      "status": "Pass"
+    },
+    {
+      "name": "URL import rejects any private address in a mixed DNS answer",
+      "status": "Pass"
+    },
+    {
+      "name": "URL import passes redirect:error to fetch and rejects non-HTTP protocols",
+      "status": "Pass"
+    },
+    {
+      "name": "Logout fails visibly when server-side revocation throws",
+      "status": "Pass"
+    },
+    {
+      "name": "Logout succeeds only when mocked revocation completes",
+      "status": "Pass"
+    },
+    {
+      "name": "Reset rejects missing, expired, boundary and invalid expiry without changing password",
+      "status": "Pass"
+    },
+    {
+      "name": "Reset accepts valid link and clears token and expiry",
+      "status": "Pass"
+    },
+    {
+      "name": "Changed JS/TS files parse (syntax only, not typecheck)",
+      "status": "Pass"
+    }
+  ]
+}
